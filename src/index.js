@@ -22,6 +22,7 @@ const TRANSITION_TIME = config.transition.time;
 
 for (let i = 0; i < DATASET.data.length; i++) {
   setTimeout(function(){
+    document.getElementById('year').innerHTML = DATASET.data[i].year;
     //if(i == 0) {
       for (let j = 0; j < DATASET.data[i].districts.length; j++) {
         let percentage = DATASET.data[i].districts[j].data.residents * POPULATION_FACTOR;
