@@ -1,16 +1,6 @@
-# Webpack ES6 boilerplate
+# Augsburg-in-circles
 
-[![tests][tests]][tests-url]
-[![coverage][cover]][cover-url]
-
-A minimalistic Webpack 2 ES6 boilerplate project.
-
-## Prerequisites
-
-[![node][node]][node-url]
-[![npm][npm]][npm-url]
-
-- [Node.js](http://es6-features.org)
+Visualization of students in Augsburg.
 
 ## Features
 
@@ -26,7 +16,7 @@ A minimalistic Webpack 2 ES6 boilerplate project.
 
 ## Start Dev Server
 
-1. `git clone https://github.com/jluccisano/webpack-es6-boilerplate.git`
+1. `git clone https://github.com/HendrikCammann/augsburg-in-circles.git`
 2. Run `npm install`
 3. Start the dev server using `npm start`
 3. Open [http://localhost:9000](http://localhost:9000)
@@ -43,4 +33,4 @@ A minimalistic Webpack 2 ES6 boilerplate project.
 
 ## Licence
 
-_webpack-es6-boilerplate_ is available under MIT.
+Based on _webpack-es6-boilerplate_ by jluccisano | [Repository](https://github.com/jluccisano/webpack-es6-boilerplate.git)

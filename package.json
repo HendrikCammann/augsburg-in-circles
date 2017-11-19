@@ -14,12 +14,12 @@
     "sass"
   ],
   "bugs": {
-    "url": "https://gitlab.com/Cammann/Augsburg-in-circles.git",
+    "url": "https://github.com/HendrikCammann/augsburg-in-circles.git",
     "email": "mail@hendrikcammann.de"
   },
   "repository": {
     "type": "git",
-    "url": "https://gitlab.com/Cammann/Augsburg-in-circles.git"
+    "url": "https://github.com/HendrikCammann/augsburg-in-circles.git"
   },
   "main": "src/index.js",
   "scripts": {
