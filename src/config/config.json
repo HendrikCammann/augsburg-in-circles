@@ -1,5 +1,8 @@
 {
   "maxPercentage": 100,
+  "transition": {
+    "time": 1000
+  },
   "gradient": {
     "start": [232, 25, 139],
     "end": [199, 234, 253]

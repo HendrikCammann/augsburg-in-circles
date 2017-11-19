@@ -18,26 +18,30 @@ const RADIUS = config.circles.radius;
 const PI = config.circles.pi;
 const P = PI * Math.pow(RADIUS, 2);
 
+const TRANSITION_TIME = config.transition.time;
+
 for (let i = 0; i < DATASET.data.length; i++) {
-  if(i == 0) {
-    for (let j = 0; j < DATASET.data[i].districts.length; j++) {
-      let percentage = DATASET.data[i].districts[j].data.residents * POPULATION_FACTOR;
-      let percentageStudents = DATASET.data[i].districts[j].data.students * STUDENTS_FACTOR;
+  setTimeout(function(){
+    //if(i == 0) {
+      for (let j = 0; j < DATASET.data[i].districts.length; j++) {
+        let percentage = DATASET.data[i].districts[j].data.residents * POPULATION_FACTOR;
+        let percentageStudents = DATASET.data[i].districts[j].data.students * STUDENTS_FACTOR;
 
-      let p = (P / MAX_PERCENTAGE) * percentage; //for size population
-      let pStudents = (P / MAX_PERCENTAGE) * percentageStudents; //for size students
+        let p = (P / MAX_PERCENTAGE) * percentage; //for size population
+        let pStudents = (P / MAX_PERCENTAGE) * percentageStudents; //for size students
 
-      let gradientPosition = parseFloat((DATASET.data[i].districts[j].data.students * STUDENTS_FACTOR)) / MAX_PERCENTAGE;
-      let gradientColor = pickGradientColor(COLOR1, COLOR2, gradientPosition);
+        let gradientPosition = parseFloat((DATASET.data[i].districts[j].data.students * STUDENTS_FACTOR)) / MAX_PERCENTAGE;
+        let gradientColor = pickGradientColor(COLOR1, COLOR2, gradientPosition);
 
-      let radius = Math.sqrt((p / PI)); //for size population
-      let radiusStudents = Math.sqrt((pStudents / PI)); //for size students
+        let radius = Math.sqrt((p / PI)); //for size population
+        let radiusStudents = Math.sqrt((pStudents / PI)); //for size students
 
-      let item = d3.select('#' + DATASET.data[i].districts[j].name.toLowerCase());
-      item.style('fill', gradientColor);
-      item.style('r', radiusStudents);
-    }
-  }
+        let item = d3.select('#' + DATASET.data[i].districts[j].name.toLowerCase());
+        item.style('fill', gradientColor);
+        item.transition().style('r', radiusStudents).duration(TRANSITION_TIME);
+      }
+    //}
+  }, 0 + (3000*i));
 }
 
 /*
