@@ -1,0 +1,49 @@
+{
+"data": [
+    {
+      "year": 2016,
+      "name": "Oberhausen",
+      "data": {
+        "size": 720.5,
+        "residents": 27614,
+        "students": 532
+      }
+    },
+    {
+      "year": 2015,
+      "name": "Oberhausen",
+      "data": {
+        "size": 720.5,
+        "residents": 26920,
+        "students": 514
+      }
+    },
+    {
+      "year": 2014,
+      "name": "Oberhausen",
+      "data": {
+        "size": 720.5,
+        "residents": 26319,
+        "students": 521
+      }
+    },
+    {
+      "year": 2013,
+      "name": "Oberhausen",
+      "data": {
+        "size": 720.5,
+        "residents": 5168,
+        "students": 504
+      }
+    },
+    {
+      "year": 2012,
+      "name": "Oberhausen",
+      "data": {
+        "size": 720.5,
+        "residents": 5168,
+        "students": 468
+      }
+    }
+  ]
+}

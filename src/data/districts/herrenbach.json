@@ -1,0 +1,49 @@
+{
+"data": [
+    {
+      "year": 2016,
+      "name": "Herrenbach",
+      "data": {
+        "size": 142.4,
+        "residents": 10663,
+        "students": 260
+      }
+    },
+    {
+      "year": 2015,
+      "name": "Herrenbach",
+      "data": {
+        "size": 142.4,
+        "residents": 10537,
+        "students": 258
+      }
+    },
+    {
+      "year": 2014,
+      "name": "Herrenbach",
+      "data": {
+        "size": 142.4,
+        "residents": 10541,
+        "students": 279
+      }
+    },
+    {
+      "year": 2013,
+      "name": "Herrenbach",
+      "data": {
+        "size": 142.4,
+        "residents": 5168,
+        "students": 274
+      }
+    },
+    {
+      "year": 2012,
+      "name": "Herrenbach",
+      "data": {
+        "size": 142.4,
+        "residents": 5168,
+        "students": 261
+      }
+    }
+  ]
+}

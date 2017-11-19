@@ -1,0 +1,49 @@
+{
+"data": [
+    {
+      "year": 2016,
+      "name": "Spickel",
+      "data": {
+        "size": 345.2,
+        "residents": 2687,
+        "students": 70
+      }
+    },
+    {
+      "year": 2015,
+      "name": "Spickel",
+      "data": {
+        "size": 345.2,
+        "residents": 2620,
+        "students": 72
+      }
+    },
+    {
+      "year": 2014,
+      "name": "Spickel",
+      "data": {
+        "size": 345.2,
+        "residents": 2597,
+        "students": 67
+      }
+    },
+    {
+      "year": 2013,
+      "name": "Spickel",
+      "data": {
+        "size": 345.2,
+        "residents": 5168,
+        "students": 70
+      }
+    },
+    {
+      "year": 2012,
+      "name": "Spickel",
+      "data": {
+        "size": 345.2,
+        "residents": 5168,
+        "students": 58
+      }
+    }
+  ]
+}

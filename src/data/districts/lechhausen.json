@@ -1,0 +1,49 @@
+{
+"data": [
+    {
+      "year": 2016,
+      "name": "Lechhausen",
+      "data": {
+        "size": 1049.1,
+        "residents": 35871,
+        "students": 614
+      }
+    },
+    {
+      "year": 2015,
+      "name": "Lechhausen",
+      "data": {
+        "size": 1049.1,
+        "residents": 35604,
+        "students": 590
+      }
+    },
+    {
+      "year": 2014,
+      "name": "Lechhausen",
+      "data": {
+        "size": 1049.1,
+        "residents": 34692,
+        "students": 570
+      }
+    },
+    {
+      "year": 2013,
+      "name": "Lechhausen",
+      "data": {
+        "size": 1049.1,
+        "residents": 5168,
+        "students": 577
+      }
+    },
+    {
+      "year": 2012,
+      "name": "Lechhausen",
+      "data": {
+        "size": 1049.1,
+        "residents": 5168,
+        "students": 543
+      }
+    }
+  ]
+}

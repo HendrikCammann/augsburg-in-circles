@@ -1,0 +1,49 @@
+{
+"data": [
+    {
+      "year": 2016,
+      "name": "Hammerschmiede",
+      "data": {
+        "size": 901.6,
+        "residents": 7260,
+        "students": 95
+      }
+    },
+    {
+      "year": 2015,
+      "name": "Hammerschmiede",
+      "data": {
+        "size": 901.6,
+        "residents": 7163,
+        "students": 115
+      }
+    },
+    {
+      "year": 2014,
+      "name": "Hammerschmiede",
+      "data": {
+        "size": 901.6,
+        "residents": 7084,
+        "students": 113
+      }
+    },
+    {
+      "year": 2013,
+      "name": "Hammerschmiede",
+      "data": {
+        "size": 901.6,
+        "residents": 5168,
+        "students": 110
+      }
+    },
+    {
+      "year": 2012,
+      "name": "Hammerschmiede",
+      "data": {
+        "size": 901.6,
+        "residents": 5168,
+        "students": 99
+      }
+    }
+  ]
+}

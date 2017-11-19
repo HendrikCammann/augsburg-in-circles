@@ -1,0 +1,49 @@
+{
+"data": [
+    {
+      "year": 2016,
+      "name": "Inningen",
+      "data": {
+        "size": 1278.3,
+        "residents": 4811,
+        "students": 109
+      }
+    },
+    {
+      "year": 2015,
+      "name": "Inningen",
+      "data": {
+        "size": 1278.3,
+        "residents": 4787,
+        "students": 102
+      }
+    },
+    {
+      "year": 2014,
+      "name": "Inningen",
+      "data": {
+        "size": 1278.3,
+        "residents": 4816,
+        "students": 96
+      }
+    },
+    {
+      "year": 2013,
+      "name": "Inningen",
+      "data": {
+        "size": 1278.3,
+        "residents": 5168,
+        "students": 109
+      }
+    },
+    {
+      "year": 2012,
+      "name": "Inningen",
+      "data": {
+        "size": 1278.3,
+        "residents": 5168,
+        "students": 99
+      }
+    }
+  ]
+}

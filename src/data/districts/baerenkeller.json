@@ -1,0 +1,49 @@
+{
+"data": [
+    {
+      "year": 2016,
+      "name": "Bärenkeller",
+      "data": {
+        "size": 313.4,
+        "residents": 7637,
+        "students": 99
+      }
+    },
+    {
+      "year": 2015,
+      "name": "Bärenkeller",
+      "data": {
+        "size": 313.4,
+        "residents": 7619,
+        "students": 108
+      }
+    },
+    {
+      "year": 2014,
+      "name": "Bärenkeller",
+      "data": {
+        "size": 313.4,
+        "residents": 7483,
+        "students": 126
+      }
+    },
+    {
+      "year": 2013,
+      "name": "Bärenkeller",
+      "data": {
+        "size": 313.4,
+        "residents": 5168,
+        "students": 127
+      }
+    },
+    {
+      "year": 2012,
+      "name": "Bärenkeller",
+      "data": {
+        "size": 313.4,
+        "residents": 5168,
+        "students": 124
+      }
+    }
+  ]
+}

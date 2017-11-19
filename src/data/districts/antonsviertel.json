@@ -1,0 +1,49 @@
+{
+"data": [
+    {
+      "year": 2016,
+      "name": "Antonsviertel",
+      "data": {
+        "size": 158.3,
+        "residents": 6379,
+        "students": 226
+      }
+    },
+    {
+      "year": 2015,
+      "name": "Antonsviertel",
+      "data": {
+        "size": 158.3,
+        "residents": 6334,
+        "students": 224
+      }
+    },
+    {
+      "year": 2014,
+      "name": "Antonsviertel",
+      "data": {
+        "size": 158.3,
+        "residents": 6296,
+        "students": 212
+      }
+    },
+    {
+      "year": 2013,
+      "name": "Antonsviertel",
+      "data": {
+        "size": 158.3,
+        "residents": 5168,
+        "students": 237
+      }
+    },
+    {
+      "year": 2012,
+      "name": "Antonsviertel",
+      "data": {
+        "size": 158.3,
+        "residents": 5168,
+        "students": 218
+      }
+    }
+  ]
+}

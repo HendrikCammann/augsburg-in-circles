@@ -1,0 +1,49 @@
+{
+"data": [
+    {
+      "year": 2016,
+      "name": "Bergheim",
+      "data": {
+        "size": 2207.6,
+        "residents": 2617,
+        "students": 66
+      }
+    },
+    {
+      "year": 2015,
+      "name": "Bergheim",
+      "data": {
+        "size": 2207.6,
+        "residents": 2583,
+        "students": 67
+      }
+    },
+    {
+      "year": 2014,
+      "name": "Bergheim",
+      "data": {
+        "size": 2207.6,
+        "residents": 2596,
+        "students": 65
+      }
+    },
+    {
+      "year": 2013,
+      "name": "Bergheim",
+      "data": {
+        "size": 2207.6,
+        "residents": 5168,
+        "students": 63
+      }
+    },
+    {
+      "year": 2012,
+      "name": "Bergheim",
+      "data": {
+        "size": 2207.6,
+        "residents": 5168,
+        "students": 55
+      }
+    }
+  ]
+}

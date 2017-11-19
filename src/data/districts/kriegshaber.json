@@ -1,0 +1,49 @@
+{
+"data": [
+    {
+      "year": 2016,
+      "name": "Kriegshaber",
+      "data": {
+        "size": 451.1,
+        "residents": 18885,
+        "students": 273
+      }
+    },
+    {
+      "year": 2015,
+      "name": "Kriegshaber",
+      "data": {
+        "size": 451.1,
+        "residents": 18545,
+        "students": 264
+      }
+    },
+    {
+      "year": 2014,
+      "name": "Kriegshaber",
+      "data": {
+        "size": 451.1,
+        "residents": 17686,
+        "students": 280
+      }
+    },
+    {
+      "year": 2013,
+      "name": "Kriegshaber",
+      "data": {
+        "size": 451.1,
+        "residents": 5168,
+        "students": 235
+      }
+    },
+    {
+      "year": 2012,
+      "name": "Kriegshaber",
+      "data": {
+        "size": 451.1,
+        "residents": 5168,
+        "students": 205
+      }
+    }
+  ]
+}

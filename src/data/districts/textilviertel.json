@@ -1,0 +1,49 @@
+{
+"data": [
+    {
+      "year": 2016,
+      "name": "Textilviertel",
+      "data": {
+        "size": 223.1,
+        "residents": 9452,
+        "students": 283
+      }
+    },
+    {
+      "year": 2015,
+      "name": "Textilviertel",
+      "data": {
+        "size": 223.1,
+        "residents": 9177,
+        "students": 279
+      }
+    },
+    {
+      "year": 2014,
+      "name": "Textilviertel",
+      "data": {
+        "size": 223.1,
+        "residents": 8792,
+        "students": 298
+      }
+    },
+    {
+      "year": 2013,
+      "name": "Textilviertel",
+      "data": {
+        "size": 223.1,
+        "residents": 5168,
+        "students": 255
+      }
+    },
+    {
+      "year": 2012,
+      "name": "Textilviertel",
+      "data": {
+        "size": 223.1,
+        "residents": 5168,
+        "students": 225
+      }
+    }
+  ]
+}

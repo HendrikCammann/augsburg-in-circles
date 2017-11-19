@@ -1,0 +1,49 @@
+{
+"data": [
+    {
+      "year": 2016,
+      "name": "Hochfeld",
+      "data": {
+        "size": 193.3,
+        "residents": 9746,
+        "students": 709
+      }
+    },
+    {
+      "year": 2015,
+      "name": "Hochfeld",
+      "data": {
+        "size": 193.3,
+        "residents": 9680,
+        "students": 732
+      }
+    },
+    {
+      "year": 2014,
+      "name": "Hochfeld",
+      "data": {
+        "size": 193.3,
+        "residents": 9391,
+        "students": 681
+      }
+    },
+    {
+      "year": 2013,
+      "name": "Hochfeld",
+      "data": {
+        "size": 193.3,
+        "residents": 5168,
+        "students": 618
+      }
+    },
+    {
+      "year": 2012,
+      "name": "Hochfeld",
+      "data": {
+        "size": 193.3,
+        "residents": 5168,
+        "students": 565
+      }
+    }
+  ]
+}

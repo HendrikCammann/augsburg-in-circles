@@ -1,0 +1,44 @@
+{
+  "name": "Augsburg",
+  "maxVal": {
+    "residents": 0,
+    "students": 0
+  },
+  "data": [
+    {
+      "year": 2016,
+      "population": 293415,
+      "size": 14689.1,
+      "districts": [
+      ]
+    },
+    {
+      "year": 2015,
+      "population": 288631,
+      "size": 14689.1,
+      "districts": [
+      ]
+    },
+    {
+      "year": 2014,
+      "population": 283544,
+      "size": 14689.1,
+      "districts": [
+      ]
+    },
+    {
+      "year": 2013,
+      "population": 293415,
+      "size": 14689.1,
+      "districts": [
+      ]
+    },
+    {
+      "year": 2012,
+      "population": 293415,
+      "size": 14689.1,
+      "districts": [
+      ]
+    }
+  ]
+}

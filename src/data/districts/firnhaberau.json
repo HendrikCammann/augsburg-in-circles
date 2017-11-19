@@ -1,0 +1,49 @@
+{
+"data": [
+    {
+      "year": 2016,
+      "name": "Firnhaberau",
+      "data": {
+        "size": 782.8,
+        "residents": 5168,
+        "students": 98
+      }
+    },
+    {
+      "year": 2015,
+      "name": "Firnhaberau",
+      "data": {
+        "size": 782.8,
+        "residents": 5196,
+        "students": 88
+      }
+    },
+    {
+      "year": 2014,
+      "name": "Firnhaberau",
+      "data": {
+        "size": 782.8,
+        "residents": 5174,
+        "students": 81
+      }
+    },
+    {
+      "year": 2013,
+      "name": "Firnhaberau",
+      "data": {
+        "size": 782.8,
+        "residents": 5168,
+        "students": 78
+      }
+    },
+    {
+      "year": 2012,
+      "name": "Firnhaberau",
+      "data": {
+        "size": 782.8,
+        "residents": 5168,
+        "students": 85
+      }
+    }
+  ]
+}

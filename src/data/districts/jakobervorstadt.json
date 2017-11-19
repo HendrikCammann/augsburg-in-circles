@@ -1,0 +1,49 @@
+{
+"data": [
+    {
+      "year": 2016,
+      "name": "Jakobervorstadt",
+      "data": {
+        "size": 90.2,
+        "residents": 10754,
+        "students": 638
+      }
+    },
+    {
+      "year": 2015,
+      "name": "Jakobervorstadt",
+      "data": {
+        "size": 90.2,
+        "residents": 10584,
+        "students": 652
+      }
+    },
+    {
+      "year": 2014,
+      "name": "Jakobervorstadt",
+      "data": {
+        "size": 90.2,
+        "residents": 10345,
+        "students": 670
+      }
+    },
+    {
+      "year": 2013,
+      "name": "Jakobervorstadt",
+      "data": {
+        "size": 90.2,
+        "residents": 5168,
+        "students": 699
+      }
+    },
+    {
+      "year": 2012,
+      "name": "Jakobervorstadt",
+      "data": {
+        "size": 90.2,
+        "residents": 5168,
+        "students": 636
+      }
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+"data": [
+    {
+      "year": 2016,
+      "name": "Haunstetten",
+      "data": {
+        "size": 3234.6,
+        "residents": 27523,
+        "students": 889
+      }
+    },
+    {
+      "year": 2015,
+      "name": "Haunstetten",
+      "data": {
+        "size": 3234.6,
+        "residents": 27046,
+        "students": 856
+      }
+    },
+    {
+      "year": 2014,
+      "name": "Haunstetten",
+      "data": {
+        "size": 3234.6,
+        "residents": 26832,
+        "students": 845
+      }
+    },
+    {
+      "year": 2013,
+      "name": "Haunstetten",
+      "data": {
+        "size": 3234.6,
+        "residents": 5168,
+        "students": 827
+      }
+    },
+    {
+      "year": 2012,
+      "name": "Haunstetten",
+      "data": {
+        "size": 3234.6,
+        "residents": 5168,
+        "students": 799
+      }
+    }
+  ]
+}

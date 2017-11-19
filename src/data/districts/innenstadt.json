@@ -1,0 +1,49 @@
+{
+"data": [
+    {
+      "year": 2016,
+      "name": "Innenstadt",
+      "data": {
+        "size": 370,
+        "residents": 26623,
+        "students": 1730
+      }
+    },
+    {
+      "year": 2015,
+      "name": "Innenstadt",
+      "data": {
+        "size": 370,
+        "residents": 25743,
+        "students": 1663
+      }
+    },
+    {
+      "year": 2014,
+      "name": "Innenstadt",
+      "data": {
+        "size": 370,
+        "residents": 25351,
+        "students": 1626
+      }
+    },
+    {
+      "year": 2013,
+      "name": "Innenstadt",
+      "data": {
+        "size": 370,
+        "residents": 5168,
+        "students": 1618
+      }
+    },
+    {
+      "year": 2012,
+      "name": "Innenstadt",
+      "data": {
+        "size": 370,
+        "residents": 5168,
+        "students": 1494
+      }
+    }
+  ]
+}

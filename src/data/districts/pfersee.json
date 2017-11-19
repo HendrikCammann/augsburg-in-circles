@@ -1,0 +1,49 @@
+{
+"data": [
+    {
+      "year": 2016,
+      "name": "Pfersee",
+      "data": {
+        "size": 414.9,
+        "residents": 26977,
+        "students": 718
+      }
+    },
+    {
+      "year": 2015,
+      "name": "Pfersee",
+      "data": {
+        "size": 414.9,
+        "residents": 26539,
+        "students": 677
+      }
+    },
+    {
+      "year": 2014,
+      "name": "Pfersee",
+      "data": {
+        "size": 414.9,
+        "residents": 26071,
+        "students": 652
+      }
+    },
+    {
+      "year": 2013,
+      "name": "Pfersee",
+      "data": {
+        "size": 414.9,
+        "residents": 5168,
+        "students": 599
+      }
+    },
+    {
+      "year": 2012,
+      "name": "Pfersee",
+      "data": {
+        "size": 414.9,
+        "residents": 5168,
+        "students": 579
+      }
+    }
+  ]
+}
