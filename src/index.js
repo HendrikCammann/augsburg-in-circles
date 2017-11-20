@@ -1,12 +1,16 @@
 /* eslint-disable */
 import config from './config/config.json';
+
+// DEPENCENCY IMPORTS
 import * as d3 from "d3";
 
+// MODUDLE IMPORTS
 import createJson from './modules/createJson';
 import pickGradientColor from './modules/pickGradientColor';
 import updateMapPositions from './modules/updateMapPositions';
 
 
+// DATA VARIABLES
 const DATASET = createJson();
 const POPULATION = DATASET.maxVal.residents;
 const STUDENTS = DATASET.maxVal.students;
@@ -14,23 +18,25 @@ const MAX_PERCENTAGE = config.maxPercentage
 const POPULATION_FACTOR = MAX_PERCENTAGE / POPULATION;
 const STUDENTS_FACTOR = MAX_PERCENTAGE / STUDENTS;
 
+// CIRCLE VARIABLES
 const COLOR1 = config.gradient.start;
 const COLOR2 = config.gradient.end;
 const RADIUS = config.circles.radius;
 const PI = config.circles.pi;
 const P = PI * Math.pow(RADIUS, 2);
 
+// MAP VARIABLES
 const POSITIONS = config.views;
 const MAP_POSITIONS = config.views.positions;
 const MAP = d3.select('#map-complete');
 
-const TRANSITION_TIME = config.transition.time;
+// MISC VARIABLES
+const TRANSITION_TIME = config.transitions.time;
 
+// file variables
 let isExploded = false;
 
-document.getElementById("toggle").addEventListener("click", toggleExploded);
-setupMap();
-
+// file functions
 function toggleExploded() {
   isExploded = !isExploded;
   if(!isExploded) {
@@ -41,7 +47,6 @@ function toggleExploded() {
     updateMapPositions(POSITIONS.exploded, TRANSITION_TIME);
   }
 }
-
 function setupMap() {
   for (let i = 0; i < DATASET.data.length; i++) {
     setTimeout(function(){
@@ -78,3 +83,7 @@ function setupMap() {
     }, 0 + (3000*i));
   }
 }
+
+// running code
+document.getElementById("toggle").addEventListener("click", toggleExploded);
+setupMap();
