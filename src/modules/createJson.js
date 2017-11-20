@@ -21,7 +21,7 @@ import _pfersee from '../data/districts/pfersee.json';
 import _innenstadt from '../data/districts/innenstadt.json';
 import _jakobervorstadt from '../data/districts/jakobervorstadt.json';
 
-let _districts = [_lechhausen, _hochzoll, _hammerschmiede, _firnhaberau, _textilviertel, _spickel, _herrenbach, _goeggingen, _haunstetten, _inningen, _bergheim, _univiertel, _hochfeld, _antonsviertel, _oberhausen, _baerenkeller, _kriegshaber, _pfersee, _innenstadt, _jakobervorstadt];
+const _districts = [_lechhausen, _hochzoll, _hammerschmiede, _firnhaberau, _herrenbach, _goeggingen, _haunstetten, _inningen, _bergheim, _univiertel, _hochfeld, _oberhausen, _baerenkeller, _kriegshaber, _pfersee, _innenstadt, _antonsviertel,_jakobervorstadt, _textilviertel, _spickel];
 
 export default function createJson() {
 	for (let i = 0; i < augsburg.data.length; i++) {
