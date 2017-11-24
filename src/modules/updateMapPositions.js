@@ -5,7 +5,7 @@ export default function updateMapPositions(data, transitonTime) {
     let districtCircle = d3.select('#' + data.districts[j].name.toLowerCase());
     let districtOutline = d3.select('#' + data.districts[j].name.toLowerCase() + '_out');
     districtCircle.transition().attr('cx', data.circles[j].cx).attr('cy', data.circles[j].cy).duration(transitonTime);
-    districtOutline.transition().attr("d", data.districts[j].d).duration(transitonTime);
+    districtOutline.transition().attr("points", data.districts[j].d).duration(transitonTime);
     //districtCircle.transition().style('cy', data.circles[j].cy);
   }
 }

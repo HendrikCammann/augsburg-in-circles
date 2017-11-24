@@ -29,6 +29,7 @@ const P = PI * Math.pow(RADIUS, 2);
 const POSITIONS = config.views;
 const MAP_POSITIONS = config.views.positions;
 const MAP = d3.select('#map-complete');
+const OUTLINE = d3.select('#marker');
 
 // MISC VARIABLES
 const TRANSITION_TIME = config.transitions.time;
@@ -42,9 +43,11 @@ function toggleExploded() {
   if(!isExploded) {
     MAP.transition().attr("transform", "translate(" + MAP_POSITIONS.x + "," + MAP_POSITIONS.y + ")").duration(TRANSITION_TIME);
     updateMapPositions(POSITIONS.normal, TRANSITION_TIME);
+    OUTLINE.transition().attr('opacity', 0).duration(TRANSITION_TIME);
   } else {
-    MAP.transition().attr("transform", "translate(" + MAP_POSITIONS.x/2 + "," + MAP_POSITIONS.y/2 + ")").duration(TRANSITION_TIME);
+    MAP.transition().attr("transform", "translate(" + MAP_POSITIONS.x/100 + "," + MAP_POSITIONS.y/10 + ")").duration(TRANSITION_TIME);
     updateMapPositions(POSITIONS.exploded, TRANSITION_TIME);
+    OUTLINE.transition().attr('opacity', 1).duration(TRANSITION_TIME);
   }
 }
 function setupMap() {
@@ -69,15 +72,18 @@ function setupMap() {
 
           if(!isExploded) {
             MAP.transition().attr("transform", "translate(" + MAP_POSITIONS.x + "," + MAP_POSITIONS.y + ")").duration(TRANSITION_TIME);
+            OUTLINE.transition().attr('opacity', 0).duration(TRANSITION_TIME);
             districtCircle.transition().attr('cx', POSITIONS.normal.circles[j].cx).attr('cy', POSITIONS.normal.circles[j].cy).duration(TRANSITION_TIME);
-            districtOutline.transition().attr("d", POSITIONS.normal.districts[j].d).duration(TRANSITION_TIME);
+            districtOutline.transition().attr('points', POSITIONS.normal.districts[j].d).duration(TRANSITION_TIME);
 
           } else {
-            MAP.transition().attr("transform", "translate(" + MAP_POSITIONS.x/2 + "," + MAP_POSITIONS.y/2 + ")").duration(TRANSITION_TIME);
+            MAP.transition().attr("transform", "translate(" + MAP_POSITIONS.x/100 + "," + MAP_POSITIONS.y/10 + ")").duration(TRANSITION_TIME);
+            OUTLINE.transition().attr('opacity', 1).duration(TRANSITION_TIME);
             districtCircle.transition().attr('cx', POSITIONS.exploded.circles[j].cx).attr('cy', POSITIONS.exploded.circles[j].cy).duration(TRANSITION_TIME);
-            districtOutline.transition().attr("d", POSITIONS.exploded.districts[j].d).duration(TRANSITION_TIME);
+            districtOutline.transition().attr('points', POSITIONS.exploded.districts[j].d).duration(TRANSITION_TIME);
           }
           districtCircle.style('fill', gradientColor);
+          districtCircle.style('opacity', 0.8);
           districtCircle.transition().attr('r', radiusStudents).duration(TRANSITION_TIME);
         }
     }, 0 + (3000*i));
