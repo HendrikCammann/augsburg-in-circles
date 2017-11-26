@@ -12,8 +12,7 @@ export function updateSize(districtCircle, radius, time) {
 }
 
 export function updateText(districtText, value, time) {
-  console.log('hi', districtText.text());
-  districtText.transition().delay(time).tween('text', tweenText(districtText, value, districtText.text()));
+  districtText.transition().duration(time).tween('text', tweenText(districtText, value, districtText.text()));
 }
 
 function tweenText( item, newValue, currentValue ) {
@@ -24,7 +23,6 @@ function tweenText( item, newValue, currentValue ) {
     } else {
       item.attr('fill', config.colors.up);
     }
-    console.log(item.text());
     return function(t) {
       item.text(i(t));
     };

@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import augsburg from '../data/augsburg.json';
 
 import _lechhausen from '../data/districts/lechhausen.json';
@@ -32,6 +34,11 @@ export default function createJson() {
 			}
 			if(_districts[j].data[i].data.students > augsburg.maxVal.students) {
 				augsburg.maxVal.students = _districts[j].data[i].data.students;
+			}
+			let relative = _districts[j].data[i].data.students / _districts[j].data[i].data.residents;
+			if(relative > augsburg.maxVal.relativeStudents) {
+				//console.log(_districts[j].data[i].name, relative);
+				augsburg.maxVal.relativeStudents = relative;
 			}
 		}
 	}

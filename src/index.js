@@ -17,9 +17,11 @@ import './styles/index.scss';
 const DATASET = createJson();
 const POPULATION = DATASET.maxVal.residents;
 const STUDENTS = DATASET.maxVal.students;
+const RELATIVE_STUDENTS = DATASET.maxVal.relativeStudents;
 const MAX_PERCENTAGE = config.maxPercentage
 const POPULATION_FACTOR = MAX_PERCENTAGE / POPULATION;
 const STUDENTS_FACTOR = MAX_PERCENTAGE / STUDENTS;
+const RELATIVE_STUDENTS_FACTOR = MAX_PERCENTAGE / RELATIVE_STUDENTS;
 
 // CIRCLE VARIABLES
 const COLOR1 = config.gradient.start;
@@ -31,18 +33,28 @@ const P = PI * Math.pow(RADIUS, 2);
 
 // MISC VARIABLES
 const TRANSITION_TIME = config.transitions.time;
+let isAbsolute = true;
 
 function setupMap() {
   for (let i = 0; i < DATASET.data.length; i++) {
     setTimeout(function(){
       document.getElementById('year').innerHTML = DATASET.data[i].year;
       for (let j = 0; j < DATASET.data[i].districts.length; j++) {
-          let graphData = calculateMapData(DATASET.data[i].districts[j].data.students, STUDENTS_FACTOR, P, MAX_PERCENTAGE, COLOR1, COLOR2, PI);
+          let graphData = calculateMapData(DATASET.data[i].districts[j].data.students, STUDENTS_FACTOR, P, MAX_PERCENTAGE, COLOR1, COLOR2, PI, isAbsolute);
+          //let graphData = calculateMapData(DATASET.data[i].districts[j].data.students, MAX_RELATIVE_STUDENTS, P, MAX_PERCENTAGE, COLOR1, COLOR2, PI);
+
           let circle = d3.select('#' + DATASET.data[i].districts[j].name.toLowerCase() + '_circle');
           let district = d3.select('#' + DATASET.data[i].districts[j].name.toLowerCase());
           let text = d3.select('#' + DATASET.data[i].districts[j].name.toLowerCase() + '_text');
 
-          updateColors(circle, district, graphData.color);
+          if(!isAbsolute) {
+            let gradientPosition = ((DATASET.data[i].districts[j].data.students / DATASET.data[i].districts[j].data.residents) * RELATIVE_STUDENTS_FACTOR) / MAX_PERCENTAGE;
+            let gradientColor = pickGradientColor(COLOR1, COLOR2, gradientPosition);
+            updateColors(circle, district, gradientColor);
+          } else {
+            updateColors(circle, district, graphData.color);
+          }
+
           updateSize(circle, graphData.radius, TRANSITION_TIME);
           updateText(text, DATASET.data[i].districts[j].data.students, TRANSITION_TIME);
         }
