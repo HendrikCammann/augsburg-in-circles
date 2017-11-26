@@ -1,4 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=Overpass:300,400,600,700');
+
 body {
   text-align: center;
   max-height: 100vh;
+  font-family: 'Overpass', sans-serif;
+}
+
+svg {
+  text {
+    font-size: 12px;
+    pointer-events: none;
+    font-weight: 600;
+  }
+}
+
+#year {
+  font-size: 30px;
+  font-weight: 700;
 }

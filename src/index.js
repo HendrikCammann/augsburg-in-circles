@@ -8,7 +8,7 @@ import $ from "jquery";
 // MODUDLE IMPORTS
 import createJson from './modules/createJson';
 import pickGradientColor from './modules/pickGradientColor';
-import { updateColors, updateSize } from './modules/updateMap';
+import { updateColors, updateSize, updateText } from './modules/updateMap';
 import { calculateMapData} from './modules/calculator';
 
 import './styles/index.scss';
@@ -40,9 +40,11 @@ function setupMap() {
           let graphData = calculateMapData(DATASET.data[i].districts[j].data.students, STUDENTS_FACTOR, P, MAX_PERCENTAGE, COLOR1, COLOR2, PI);
           let circle = d3.select('#' + DATASET.data[i].districts[j].name.toLowerCase() + '_circle');
           let district = d3.select('#' + DATASET.data[i].districts[j].name.toLowerCase());
+          let text = d3.select('#' + DATASET.data[i].districts[j].name.toLowerCase() + '_text');
 
           updateColors(circle, district, graphData.color);
           updateSize(circle, graphData.radius, TRANSITION_TIME);
+          updateText(text, DATASET.data[i].districts[j].data.students, TRANSITION_TIME);
         }
     }, 0 + (3000*i));
   }
