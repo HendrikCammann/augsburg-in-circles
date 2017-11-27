@@ -1,13 +1,19 @@
 /* eslint-disable */
 import pickGradientColor from './pickGradientColor';
 
-export function calculateMapData(students, factor, p, maxPercentage, color1, color2, color3, colorstop, pi) {
+export function calculateMapData(students, residents, factor, relativeFactor, p, maxPercentage, color1, color2, color3, colorstop, pi, isAbsolute) {
 
   let percentageStudents = students * factor;
 
   let pStudents = (p / maxPercentage) * percentageStudents; //for size students
 
-  let gradientPosition = parseFloat((students * factor)) / maxPercentage;
+  let gradientPosition;
+  if (isAbsolute) {
+    gradientPosition = parseFloat((students * factor)) / maxPercentage;
+  } else {
+    gradientPosition = parseFloat(((students / residents) * relativeFactor)) / maxPercentage;
+  }
+
   let gradientColor;
   if(gradientPosition >= colorstop) {
     gradientColor = pickGradientColor(color1, color2, gradientPosition);
@@ -16,7 +22,6 @@ export function calculateMapData(students, factor, p, maxPercentage, color1, col
   }
 
   let radiusStudents = Math.sqrt((pStudents / pi)); //for size students
-
 
   let obj = {
     color: gradientColor,
