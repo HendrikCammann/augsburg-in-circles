@@ -25,7 +25,9 @@ const RELATIVE_STUDENTS_FACTOR = MAX_PERCENTAGE / RELATIVE_STUDENTS;
 
 // CIRCLE VARIABLES
 const COLOR1 = config.gradient.start;
-const COLOR2 = config.gradient.end;
+const COLOR2 = config.gradient.mid;
+const COLOR3 = config.gradient.end;
+const COLORSTOP = config.gradient.colorstop;
 const RADIUS = config.circles.radius;
 const PI = config.circles.pi;
 const P = PI * Math.pow(RADIUS, 2);
@@ -40,8 +42,7 @@ function setupMap() {
     setTimeout(function(){
       document.getElementById('year').innerHTML = DATASET.data[i].year;
       for (let j = 0; j < DATASET.data[i].districts.length; j++) {
-          let graphData = calculateMapData(DATASET.data[i].districts[j].data.students, STUDENTS_FACTOR, P, MAX_PERCENTAGE, COLOR1, COLOR2, PI, isAbsolute);
-          //let graphData = calculateMapData(DATASET.data[i].districts[j].data.students, MAX_RELATIVE_STUDENTS, P, MAX_PERCENTAGE, COLOR1, COLOR2, PI);
+          let graphData = calculateMapData(DATASET.data[i].districts[j].data.students, STUDENTS_FACTOR, P, MAX_PERCENTAGE, COLOR1, COLOR2, COLOR3, COLORSTOP, PI, isAbsolute);
 
           let circle = d3.select('#' + DATASET.data[i].districts[j].name.toLowerCase() + '_circle');
           let district = d3.select('#' + DATASET.data[i].districts[j].name.toLowerCase());
@@ -49,7 +50,13 @@ function setupMap() {
 
           if(!isAbsolute) {
             let gradientPosition = ((DATASET.data[i].districts[j].data.students / DATASET.data[i].districts[j].data.residents) * RELATIVE_STUDENTS_FACTOR) / MAX_PERCENTAGE;
-            let gradientColor = pickGradientColor(COLOR1, COLOR2, gradientPosition);
+            console.log(gradientPosition);
+            let gradientColor;
+            if(gradientPosition >= COLORSTOP) {
+              gradientColor = pickGradientColor(COLOR1, COLOR2, gradientPosition);
+            } else {
+              gradientColor = pickGradientColor(COLOR2, COLOR3, gradientPosition);
+            }
             updateColors(circle, district, gradientColor);
           } else {
             updateColors(circle, district, graphData.color);
@@ -64,7 +71,7 @@ function setupMap() {
 
 for (let i = 0; i < 25; i++) {
   let pos = i / 25
-  let color = pickGradientColor(COLOR1, COLOR2, pos);
+  let color = pickGradientColor(COLOR1, COLOR3, pos);
 
   //console.log(i + ': ' + color);
 }
