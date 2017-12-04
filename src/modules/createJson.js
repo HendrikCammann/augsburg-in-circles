@@ -40,6 +40,10 @@ export default function createJson() {
 				//console.log(_districts[j].data[i].name, relative);
 				augsburg.maxVal.relativeStudents = relative;
 			}
+			if(augsburg.data[i].population > augsburg.maxVal.population) {
+				augsburg.maxVal.population = augsburg.data[i].population;
+			}
+
 		}
 	}
 	return augsburg;

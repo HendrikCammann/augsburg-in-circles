@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Overpass:300,400,600,700');
+@import '../../node_modules/bulma/css/bulma.css';
 
 body {
   text-align: center;
@@ -19,6 +20,36 @@ svg {
   font-weight: 700;
 }
 
-#toggle {
-  margin-bottom: 30px;
+.chart {
+  &__bar {
+    background-color: lightgray;
+    font-size: 12px;
+    line-height: 24px;
+    height: 30px;
+    text-align: right;
+    padding: 3px;
+    margin: 5px;
+    color: white;
+
+    &:hover {
+      background-color: green;
+    }
+
+    &--active {
+      background-color: green;
+    }
+  }
+}
+
+.v-center {
+  &__outer {
+      position: relative;
+  }
+
+  &__inner {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+  }
 }

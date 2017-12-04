@@ -3,7 +3,8 @@
   "maxVal": {
     "residents": 0,
     "students": 0,
-    "relativeStudents": 0
+    "relativeStudents": 0,
+    "population": 0
   },
   "data": [
     {
@@ -29,14 +30,14 @@
     },
     {
       "year": 2013,
-      "population": 293415,
+      "population": 278473,
       "size": 14689.1,
       "districts": [
       ]
     },
     {
       "year": 2012,
-      "population": 293415,
+      "population": 274327,
       "size": 14689.1,
       "districts": [
       ]

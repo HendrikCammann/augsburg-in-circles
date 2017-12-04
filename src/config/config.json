@@ -3,6 +3,9 @@
   "transitions": {
     "time": 1000
   },
+  "chart": {
+    "width": 250
+  },
   "gradient": {
     "colorstop": 0.35,
     "start": [72, 58, 75],

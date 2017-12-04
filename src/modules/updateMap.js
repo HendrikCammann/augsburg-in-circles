@@ -24,6 +24,7 @@ export function updatePositions(districtCircle, district, index, isExploded, tim
         map.transition(time).attr("transform", "translate(" + config.views.positions.x/100 + "," + config.views.positions.y/10 + ")");
         districtCircle.transition(time).attr('cx', config.views.exploded.circles[index].cx).attr('cy', config.views.exploded.circles[index].cy);
         district.transition(time).attr('points', config.views.exploded.districts[index].d);
+        //district.transition(time).attr('cx', config.views.normal.circles[index].cx).attr('cy', config.views.normal.circles[index].cy);
     }
 }
 
