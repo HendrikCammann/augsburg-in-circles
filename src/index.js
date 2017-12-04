@@ -68,8 +68,8 @@ function setupMap() {
     }
     for (let i = 0; i < datasetOutput.length; i++) {
         setTimeout(function(){
-          outputYear(datasetOutput[i]);
-        }, 0 + (3000*i));
+            outputYear(datasetOutput[i]);
+        }, 0 + (2000*i));
     }
 }
 
