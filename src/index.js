@@ -10,7 +10,7 @@ import createJson from './modules/createJson';
 import { updateColors, updateSize, updateText, updatePositions } from './modules/updateMap';
 import { calculateMapData } from './modules/calculator';
 import { hoverCircle } from './modules/hover';
-import { drawChart, highlightChart } from './modules/chart';
+import { drawChart, highlightChart, drawGraph, highlightGraph } from './modules/chart';
 
 import './styles/index.scss';
 
@@ -43,8 +43,8 @@ const MAP = d3.select('#map-complete');
 let isAbsolute = true;
 let isExploded = false;
 let datasetOutput = [];
+let chartData = [];
 let activeYear;
-
 
 // FUNCTIONS
 function toggleAbsolute() {
@@ -77,11 +77,17 @@ function outputYear(year_dataset) {
 function setupMap() {
     for (let i = 0; i < DATASET.data.length; i++) {
         datasetOutput.push(DATASET.data[i]);
+        let obj = {
+          year: DATASET.data[i].year,
+          population: DATASET.data[i].population
+        };
+        chartData.push(obj);
         drawChart(DATASET.data[i], i, CHART_FACTOR);
     }
     for (let i = 0; i < datasetOutput.length; i++) {
         setTimeout(function() {
             outputYear(datasetOutput[i]);
+            highlightGraph(i);
             highlightChart(i);
         }, 0 + (2000*i));
     }
@@ -92,10 +98,14 @@ function setupMap() {
 $(document).ready(function(){
     document.getElementById("toggle").addEventListener("click", toggleAbsolute);
     document.getElementById("explode").addEventListener("click", toggleExploded);
+
     $('.chart__bar').click(function(event) {
       outputYear(datasetOutput[event.target.attributes.year.value]);
       highlightChart(event.target.attributes.year.value);
-    })
+    });
+
     setupMap();
+    console.log('data', chartData);
+    drawGraph(chartData, AUGSBURG_RESIDENTS);
     // hoverCircle();
 });

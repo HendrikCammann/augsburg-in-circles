@@ -20,6 +20,18 @@ svg {
   font-weight: 700;
 }
 
+.head {
+  height: 5vh;
+}
+
+.bottom {
+  heigth: 15vh;
+}
+
+.mid {
+  height: 80vh;
+}
+
 .chart {
   &__bar {
     background-color: lightgray;
@@ -52,4 +64,24 @@ svg {
       left: 50%;
       transform: translate(-50%, -50%);
   }
+}
+
+.axis { font: 14px sans-serif; }
+
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 2px;
+}
+
+.area {
+  fill: lightsteelblue;
+}
+
+.tick text {
+  fill: lightgray;
+}
+
+.active_year {
+  fill: red !important;
 }
