@@ -70,16 +70,21 @@ svg {
 
 .line {
   fill: none;
-  stroke: steelblue;
+  stroke: gray;
   stroke-width: 2px;
+  stroke-dasharray: 5 5;
 }
 
 .area {
-  fill: lightsteelblue;
+  fill: #F2F2F2;
 }
 
 .tick text {
   fill: lightgray;
+}
+
+#chartline circle {
+  fill: lightgray
 }
 
 .active_year {

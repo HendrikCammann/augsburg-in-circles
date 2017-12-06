@@ -44,6 +44,7 @@ export function drawGraph(data, maxVal) {
       .attr("width", width + margin.left + margin.right)
       .attr("height", height + margin.top + margin.bottom)
       .append("g")
+      .attr("id", "chartline")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
   x.domain([data[0].year, data[data.length-1].year]);
@@ -53,23 +54,32 @@ export function drawGraph(data, maxVal) {
      .data([data])
      .attr("class", "area")
      .attr("d", area);
+
   // Add the valueline path.
   svg.append("path")
       .data([data])
       .attr("class", "line")
       .attr("d", valueline);
 
-  svg.append("g")
+  svg.selectAll("dot")
+    .data(data)
+  .enter().append("circle")
+    .attr("r", 3.5)
+    .attr("cx", function(d) { return x(d.year); })
+    .attr("cy", function(d) { return y(d.population); });
+
+
+  /*svg.append("g")
       .attr("class", "axis")
       .attr("transform", "translate(0," + height + ")")
       .call(d3.axisBottom(x).ticks(data.length))
       .selectAll("text")
-        .style("text-anchor", "center")
+        .style("text-anchor", "center")*/
 
 }
 
 export function highlightGraph(index) {
-  $('.tick').children('text').each(function(idx, item) {
+  $('#chartline').children('circle').each(function(idx, item) {
     if(idx === index) {
       $(item).addClass("active_year");
     } else {
