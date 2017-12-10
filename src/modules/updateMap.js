@@ -1,10 +1,12 @@
 /* eslint-disable */
 import config from '../config/config.json';
 import * as d3 from "d3";
+import { TweenMax, TweenLite, Power2, TimelineLite } from "gsap";
+import MorphSVGPlugin from 'gsap/MorphSVGPlugin';
 
 export function updateColors(districtCircle, district, color) {
     districtCircle.style('fill', color);
-    district.style('fill', '#212121');
+    district.style('fill', color);
 }
 
 export function updateSize(districtCircle, radius, time) {
@@ -15,17 +17,54 @@ export function updateText(districtText, value, time) {
     districtText.transition().duration(time).tween('text', tweenText(districtText, value, districtText.text()));
 }
 
-export function updatePositions(districtCircle, district, index, isExploded, time, map) {
+export function updatePositions(name, isExploded, text, time) {
+    MorphSVGPlugin.convertToPath("rect, ellipse, line, polygon, polyline");
+
+    let tl = new TimelineMax({
+      repeat: 0,
+      yoyo: false,
+      repeatDelay: 0,
+      delay: 0
+    });
+
     if(!isExploded) {
-        map.transition(time).attr("transform", "translate(" + config.views.positions.x + "," + config.views.positions.y + ")");
-        districtCircle.transition(time).attr('cx', config.views.normal.circles[index].cx).attr('cy', config.views.normal.circles[index].cy);
-        district.transition(time).attr('points', config.views.normal.districts[index].d);
+        tl.to('#' + name, 1, {
+          morphSVG: {
+            shape: '#' + name + '_fake'
+          },
+          stroke: '#FFFFFF',
+          //fill: '#4CAF50',
+          ease: Back.easeInOut
+        })
+        text.transition().attr('opacity', 0).duration(time/10);
     } else {
-        map.transition(time).attr("transform", "translate(" + config.views.positions.x/100 + "," + config.views.positions.y/10 + ")");
-        districtCircle.transition(time).attr('cx', config.views.exploded.circles[index].cx).attr('cy', config.views.exploded.circles[index].cy);
-        district.transition(time).attr('points', config.views.exploded.districts[index].d);
-        //district.transition(time).attr('cx', config.views.normal.circles[index].cx).attr('cy', config.views.normal.circles[index].cy);
+        tl.to('#' + name, 1, {
+          morphSVG: {
+            shape: '#' + name + '_circle'
+          },
+          stroke: '#FFFFFF',
+          ease: Back.easeInOut
+        })
+        text.transition().delay(500).attr('opacity', 1).duration(time);
     }
+}
+
+export function updateLabel(name, district, districtText, radius, time) {
+    let posX;
+
+    if(parseFloat(district.attr('cx')) < 265) {
+        posX = parseFloat(district.attr('cx')) - radius;
+        districtText.attr('text-anchor', 'end');
+        districtText.text(name + ' --');
+    } else {
+        posX = parseFloat(district.attr('cx')) + radius;
+        districtText.attr('text-anchor', 'start');
+        districtText.text('-- ' + name);
+    }
+
+    let posY = parseFloat(district.attr('cy')) + 3;
+
+    districtText.attr('dx', posX).attr('dy', posY);
 }
 
 function tweenText(item, newValue, currentValue) {
