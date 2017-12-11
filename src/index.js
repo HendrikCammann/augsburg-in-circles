@@ -82,6 +82,8 @@ function resetVisual(data) {
 
 function outputYear(year_dataset) {
     document.getElementById('year').innerHTML = year_dataset.year;
+    document.getElementById('year_last').innerHTML = year_dataset.change.last;
+    document.getElementById('year_next').innerHTML = year_dataset.change.next;
     activeYear = year_dataset;
     for (let i = 0; i < year_dataset.districts.length; i++) {
         let circle = d3.select('#' + year_dataset.districts[i].name.toLowerCase() + '_circle');
@@ -115,10 +117,10 @@ $(document).ready(function(){
     document.getElementById("toggle").addEventListener("click", toggleAbsolute);
     document.getElementById("explode").addEventListener("click", toggleExploded);
 
-    /*$('.chart__bar').click(function(event) {
+    $('.chart__bar').click(function(event) {
       outputYear(datasetOutput[event.target.attributes.year.value], false);
       highlightChart(event.target.attributes.year.value);
-    });*/
+    });
     setupDataPackages();
     resetVisual(datasetOutput[0]);
     setupMap();

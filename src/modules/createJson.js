@@ -43,8 +43,18 @@ export default function createJson() {
 			if(augsburg.data[i].population > augsburg.maxVal.population) {
 				augsburg.maxVal.population = augsburg.data[i].population;
 			}
-
+			augsburg.data[i].students += _districts[j].data[i].data.students;
 		}
+	}
+	for (let i = 0; i < augsburg.data.length; i++) {
+			if (i < augsburg.data.length - 1) {
+				console.log('in');
+					augsburg.data[i].change.last = augsburg.data[i].students - augsburg.data[i+1].students;
+			}
+			if (i > 0 && i < augsburg.data.length) {
+				console.log('also');
+					augsburg.data[i].change.next = augsburg.data[i].students - augsburg.data[i-1].students;
+			}
 	}
 	return augsburg;
 }
