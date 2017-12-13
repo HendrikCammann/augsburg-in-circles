@@ -107,7 +107,7 @@ function outputYear(year_dataset) {
         for (let j = 0; j < 9; j++) {
           let item = d3.select('#' + year_dataset.districts[i].name.toLowerCase() + '_' + j);
           if(j < amount) {
-            item.transition().attr('r', '7.5').attr('opacity', "1").attr('r', '5').duration(TRANSITION_TIME);
+            item.transition().attr('r', '10').attr('opacity', "1").attr('r', '4').duration(TRANSITION_TIME);
           } else {
             item.transition().attr('opacity', "0").duration(TRANSITION_TIME);
           }

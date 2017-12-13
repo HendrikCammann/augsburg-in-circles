@@ -30,7 +30,7 @@ export function updatePositions(name, isExploded, text, time) {
     });
 
     if(!isExploded) {
-        //$('#districts').addClass('mapScale');
+        d3.select('#counters').transition().delay(500).attr('opacity', '1').duration(time);
         tl.to('#' + name, 1, {
           morphSVG: {
             shape: '#' + name + '_fake'
@@ -41,7 +41,6 @@ export function updatePositions(name, isExploded, text, time) {
         })
         text.transition().attr('opacity', 0).duration(time/10);
     } else {
-        //$('#districts').removeClass('mapScale');
         tl.to('#' + name, 1, {
           morphSVG: {
             shape: '#' + name + '_circle'
@@ -50,6 +49,7 @@ export function updatePositions(name, isExploded, text, time) {
           ease: Back.easeInOut
         })
         text.transition().delay(500).attr('opacity', 1).duration(time);
+        d3.select('#counters').transition().attr('opacity', '0').duration(time/2);
     }
 }
 
