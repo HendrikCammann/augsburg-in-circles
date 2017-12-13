@@ -8,7 +8,7 @@ import $ from "jquery";
 
 // MODUDLE IMPORTS
 import createJson from './modules/createJson';
-import { updateColors, updateSize, updateText, updatePositions, updateLabel } from './modules/updateMap';
+import { updateColors, updateSize, updateText, updatePositions, updateLabel, updateCounter } from './modules/updateMap';
 import { calculateMapData } from './modules/calculator';
 import { hoverCircle } from './modules/hover';
 import { drawChart, highlightChart, drawGraph, highlightGraph } from './modules/chart';
@@ -92,29 +92,7 @@ function outputYear(year_dataset) {
 
         let mapData = calculateMapData(year_dataset.districts[i].data.students, year_dataset.districts[i].data.residents, STUDENTS_FACTOR, RELATIVE_STUDENTS_FACTOR, P, MAX_PERCENTAGE, GRADIENT, PI, isAbsolute);
 
-
-        let largeCircle = d3.select('#' + year_dataset.districts[i].name.toLowerCase() + '_center');
-        let amount = 0;
-        if (year_dataset.districts[i].data.students >= 1000) {
-          largeCircle.transition().attr('opacity', "1").duration(TRANSITION_TIME);
-          amount = year_dataset.districts[i].data.students - 1000;
-          amount = parseInt(amount / 100);
-        } else {
-          largeCircle.transition().attr('opacity', "0").duration(TRANSITION_TIME);
-          amount = parseInt(year_dataset.districts[i].data.students / 100);
-        }
-
-        for (let j = 0; j < 9; j++) {
-          let item = d3.select('#' + year_dataset.districts[i].name.toLowerCase() + '_' + j);
-          if(j < amount) {
-            item.transition().attr('r', '10').attr('opacity', "1").attr('r', '4').duration(TRANSITION_TIME);
-          } else {
-            item.transition().attr('opacity', "0").duration(TRANSITION_TIME);
-          }
-        }
-
-
-
+        updateCounter(year_dataset.districts[i].name.toLowerCase(), year_dataset.districts[i].data.students, TRANSITION_TIME)
         updatePositions(year_dataset.districts[i].name.toLowerCase(), isExploded, text, TRANSITION_TIME);
         updateLabel(year_dataset.districts[i].name, circle, text, mapData.radius, TRANSITION_TIME);
         updateColors(circle, district, mapData.color);
