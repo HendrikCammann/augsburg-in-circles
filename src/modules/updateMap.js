@@ -1,6 +1,8 @@
 /* eslint-disable */
 import config from '../config/config.json';
 import * as d3 from "d3";
+import $ from 'jquery';
+
 import { TweenMax, TweenLite, Power2, TimelineLite } from "gsap";
 import MorphSVGPlugin from 'gsap/MorphSVGPlugin';
 
@@ -28,6 +30,7 @@ export function updatePositions(name, isExploded, text, time) {
     });
 
     if(!isExploded) {
+        //$('#districts').addClass('mapScale');
         tl.to('#' + name, 1, {
           morphSVG: {
             shape: '#' + name + '_fake'
@@ -38,6 +41,7 @@ export function updatePositions(name, isExploded, text, time) {
         })
         text.transition().attr('opacity', 0).duration(time/10);
     } else {
+        //$('#districts').removeClass('mapScale');
         tl.to('#' + name, 1, {
           morphSVG: {
             shape: '#' + name + '_circle'

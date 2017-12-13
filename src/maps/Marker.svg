@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="25px" viewBox="0 0 24 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.1 (47250) - http://www.bohemiancoding.com/sketch -->
+    <title>Marker</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="test" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-942.000000, -461.000000)">
+        <g id="Marker">
+            <circle id="CENTER" fill="#983030" cx="12" cy="12.5" r="5"></circle>
+            <g id="outer" fill="#D8D8D8">
+                <circle id="10" cx="6.09997559" cy="4.3999939" r="2.5"></circle>
+                <circle id="9" cx="2.5" cy="9.3999939" r="2.5"></circle>
+                <circle id="8" cx="2.5" cy="15.6000061" r="2.5"></circle>
+                <circle id="7" cx="6.09997559" cy="20.6000061" r="2.5"></circle>
+                <circle id="6" cx="12" cy="22.5" r="2.5"></circle>
+                <circle id="5" cx="17.9000244" cy="20.6000061" r="2.5"></circle>
+                <circle id="4" cx="21.5" cy="15.6000061" r="2.5"></circle>
+                <circle id="3" cx="21.5" cy="9.3999939" r="2.5"></circle>
+                <circle id="2" cx="17.9000244" cy="4.3999939" r="2.5"></circle>
+                <circle id="1" cx="12" cy="2.5" r="2.5"></circle>
+            </g>
+        </g>
+    </g>
+</svg>

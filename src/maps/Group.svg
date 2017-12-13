@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="51px" height="50px" viewBox="0 0 51 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.1 (47250) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="test" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-1259.000000, -541.000000)">
+        <g id="pfersee_marker" transform="translate(320,296) scale(0.4)">
+            <circle id="pfersee_center" fill="#FFFFFF" cx="25" cy="25" r="10"></circle>
+            <g id="outer">
+                <circle fill="#FFFFFF" id="pfersee_8" cx="12" cy="9.79998779" r="5"></circle>
+                <circle fill="#FFFFFF" id="pfersee_7" cx="5" cy="21.9000244" r="5"></circle>
+                <circle fill="#FFFFFF" id="pfersee_6" cx="7.5" cy="35.75" r="5"></circle>
+                <circle fill="#FFFFFF" id="pfersee_5" cx="18.1999512" cy="44.75" r="5"></circle>
+                <circle fill="#FFFFFF" id="pfersee_4" cx="32.1999512" cy="44.75" r="5"></circle>
+                <circle fill="#FFFFFF" id="pfersee_3" cx="42.9000244" cy="35.75" r="5"></circle>
+                <circle fill="#FFFFFF" id="pfersee_2" cx="45.4000244" cy="21.9000244" r="5"></circle>
+                <circle fill="#FFFFFF" id="pfersee_1" cx="38.4000244" cy="9.79998779" r="5"></circle>
+                <circle fill="#FFFFFF" id="pfersee_0" cx="25.1999512" cy="5" r="5"></circle>
+            </g>
+        </g>
+    </g>
+</svg>

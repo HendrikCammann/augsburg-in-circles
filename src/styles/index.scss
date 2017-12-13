@@ -90,3 +90,11 @@ svg {
 .active_year {
   fill: red !important;
 }
+
+.mapScale {
+  transfrom: scale(1.4);
+}
+
+.scaleItem {
+  //transform: scale(0.8);
+}
