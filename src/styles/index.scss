@@ -1,13 +1,28 @@
 @import url('https://fonts.googleapis.com/css?family=Overpass:300,400,600,700');
 @import '../../node_modules/bulma/css/bulma.css';
+@import '../vendor/jquery.fullpage.min.css';
+@import '../vendor/grid.scss';
 
 body {
-  text-align: center;
-  max-height: 100vh;
   font-family: 'Overpass', sans-serif;
+  background-color: #F2F2F2;
 }
 
-svg {
+.section {
+    padding: 0;
+    margin: 0;
+}
+
+// MAP
+svg.map-container {
+  position: fixed;
+  display: inline-block;
+  height: 80vh;
+  width: 100%;
+  top: 50%;
+  left: 0;
+  margin-top: -40vh;
+
   text {
     font-size: 12px;
     pointer-events: none;
@@ -15,24 +30,45 @@ svg {
   }
 }
 
-#year {
-  font-size: 30px;
-  font-weight: 700;
+.year {
+  font-weight: 800;
+  font-size: 60px;
 }
 
-.head {
-  height: 5vh;
+// GUI
+
+.district-list {
+    position: fixed;
+    height: 742px;
+    width: 90%;
+    top: 50%;
+    margin-top: -371px;
+    margin-right: 5%;
+    text-align: right;
+
+    li span {
+        display: inline-block;
+        padding: 6px 15px;
+        margin: 4px 0;
+        font-size: 13px;
+        color: #fff;
+        background-color: #DE595F;
+        border-radius: 15px;
+        border-bottom-left-radius: 0;
+    }
 }
 
-.bottom {
-  heigth: 15vh;
-}
-
-.mid {
-  height: 80vh;
+.button-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1000;
 }
 
 .chart {
+    position: absolute;
+    top: 0;
+    left: 0;
   &__bar {
     background-color: lightgray;
     font-size: 12px;
@@ -51,42 +87,4 @@ svg {
       background-color: green;
     }
   }
-}
-
-.v-center {
-  &__outer {
-      position: relative;
-  }
-
-  &__inner {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-  }
-}
-
-.axis { font: 14px sans-serif; }
-
-.line {
-  fill: none;
-  stroke: gray;
-  stroke-width: 2px;
-  stroke-dasharray: 5 5;
-}
-
-.area {
-  fill: #F2F2F2;
-}
-
-.tick text {
-  fill: lightgray;
-}
-
-#chartline circle {
-  fill: lightgray
-}
-
-.active_year {
-  fill: red !important;
 }

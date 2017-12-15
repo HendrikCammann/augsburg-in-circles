@@ -5,6 +5,9 @@ import config from './config/config.json';
 import * as d3 from "d3";
 import $ from "jquery";
 
+//import scrolloverflow from './vendor/scrolloverflow.min.js';
+import fullpage from './vendor/jquery.fullpage.min.js';
+
 
 // MODUDLE IMPORTS
 import createJson from './modules/createJson';
@@ -81,7 +84,7 @@ function resetVisual(data) {
 }
 
 function outputYear(year_dataset) {
-    document.getElementById('year').innerHTML = year_dataset.year;
+    //document.getElementById('year').innerHTML = year_dataset.year;
     activeYear = year_dataset;
     for (let i = 0; i < year_dataset.districts.length; i++) {
         let circle = d3.select('#' + year_dataset.districts[i].name.toLowerCase() + '_circle');
@@ -99,16 +102,59 @@ function outputYear(year_dataset) {
     }
 }
 
-function setupMap() {
-    for (let i = 0; i < datasetOutput.length; i++) {
-        setTimeout(function() {
-            outputYear(datasetOutput[i]);
-            //highlightGraph(i);
-            highlightChart(i);
-        }, 0 + (2000*i));
-    }
+// SCROLL INTERACTION
+function buildFullPage() {
+    $('#fullpage').fullpage({
+        anchors:['2016', '2015', '2014', '2013', '2012'],
+        css3: false,
+        onLeave: function(index, nextIndex, direction) {
+    		yearData(nextIndex);
+    	}
+    });
 }
 
+// FILL IN CORRECT DATA
+function yearData(nextIndex) {
+	switch(nextIndex) {
+		//2016
+		case 1:
+            console.log(2016);
+            outputYear(datasetOutput[nextIndex-1]);
+            highlightChart(nextIndex-1);
+			break;
+
+		//2015
+		case 2:
+            console.log(2015);
+            outputYear(datasetOutput[nextIndex-1]);
+            highlightChart(nextIndex-1);
+			break;
+
+		//2014
+		case 3:
+            console.log(2014);
+            outputYear(datasetOutput[nextIndex-1]);
+            highlightChart(nextIndex-1);
+			break;
+
+        //2013
+        case 4:
+            console.log(2013);
+            outputYear(datasetOutput[nextIndex-1]);
+            highlightChart(nextIndex-1);
+			break;
+
+        //2012
+        case 5:
+            console.log(2012);
+            outputYear(datasetOutput[nextIndex-1]);
+            highlightChart(nextIndex-1);
+			break;
+
+		default:
+			console.log("default");
+	}
+};
 
 // RUNNING CODE
 $(document).ready(function(){
@@ -121,7 +167,9 @@ $(document).ready(function(){
     });*/
     setupDataPackages();
     resetVisual(datasetOutput[0]);
-    setupMap();
+    //setupMap();
+    buildFullPage();
+    yearData(1);
     //drawGraph(chartData, AUGSBURG_RESIDENTS);
     // hoverCircle();
 });
