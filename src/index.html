@@ -8,9 +8,20 @@
     <body>
         <section class="hero">
             <div class="hero-head head">
-                <div class="container">
-                    <div class="columns">
-                        <div class="column">
+                <div class="container is-fluid">
+                    <div class="columns menu">
+                        <div class="column has-text-left logo">
+                            <img class="logo__icon">
+                            <div class="logo__text">
+                              <div class="logo__text--strong">
+                                Augsburg. In Teilen. In Kreisen.
+                              </div>
+                              <div>
+                                Studenten im Lauf der Zeit.
+                              </div>
+                            </div>
+                        </div>
+                        <div class="column has-text-right">
                             <button id="toggle" class="button is-light" type="button">TOGGLE MAP</button>
                             <button id="explode" class="button is-light" type="button">TOGGLE EXPLODE</button>
                         </div>
@@ -21,8 +32,8 @@
             <div class="hero-body mid">
                 <div class="container is-fluid">
                     <div class="columns">
+                      <!--
                         <div class="v-center__outer column is-2">
-                          <!--
                           <div class="v-center__inner chart" id="chart">
                             <div class="chart__bar" year="0"></div>
                             <div class="chart__bar" year="1"></div>
@@ -30,8 +41,9 @@
                             <div class="chart__bar" year="3"></div>
                             <div class="chart__bar" year="4"></div>
                           </div>
-                        -->
                         </div>
+                      -->
+                      <!--
                         <div class="v-center__outer column is-2">
                             <div class="v-center__inner">
                               <h3 id="year_next">hu</h2>
@@ -39,6 +51,7 @@
                               <h3 id="year_last">hu</h2>
                             </div>
                         </div>
+                      -->
                         <div class="column">
                             <svg width="595px" height="859px" viewBox="0 0 595 859" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                   <g id="Layouts" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -465,8 +478,12 @@
             <div class="hero-foot bottom">
                 <div class="container">
                     <div class="columns">
-                        <div class="column" id="graph">
-                          TODO LEGENDE
+                        <div class="column v-center__outer" id="graph">
+                          <div class="v-center__inner">
+                            <h3 id="year_next">hu</h2>
+                            <h1 id="year"></h1>
+                            <h3 id="year_last">hu</h2>
+                          </div>
                         </div>
                     </div>
                 <div>

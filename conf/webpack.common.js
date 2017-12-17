@@ -62,7 +62,13 @@ module.exports = {
             // use style-loader in development
             fallback: "style-loader"
         })
-    }]
+    }, {
+		    test: /\.svg/,
+		    use: {
+		        loader: 'svg-url-loader',
+		        options: {}
+		    }
+		}]
   },
   plugins: [
     new CleanWebpackPlugin(['dist'], {root: process.cwd()}),
