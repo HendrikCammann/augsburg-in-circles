@@ -4,9 +4,10 @@ import * as d3 from "d3";
 import { TweenMax, TweenLite, Power2, TimelineLite } from "gsap";
 import MorphSVGPlugin from 'gsap/MorphSVGPlugin';
 
-export function updateColors(districtCircle, district, color) {
+export function updateColors(districtCircle, district, color, name) {
     districtCircle.style('fill', color);
     district.style('fill', color);
+    document.getElementById(name + '__label').style.color = "#" + color;
 }
 
 export function updateSize(districtCircle, radius, time) {

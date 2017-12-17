@@ -7,42 +7,55 @@
     </head>
     <body>
         <div class="container">
-            <!-- BUTTONS -->
-            <div class="button-container">
-                <button id="toggle" class="button is-light" type="button">TOGGLE MAP</button>
-                <button id="explode" class="button is-light" type="button">TOGGLE EXPLODE</button>
+            <div class="row menu">
+                <div class="column column--half logo">
+                    <img class="logo__icon">
+                      <div class="logo__text">
+                          <div class="logo__text--strong">
+                            Augsburg. In Teilen. In Kreisen.
+                          </div>
+                          <div>
+                            Studenten im Lauf der Zeit.
+                          </div>
+                      </div>
+                </div>
+                <div class="column column--half toggle column--right content--right">
+                    <button id="toggle" class="button is-light" type="button">TOGGLE MAP</button>
+                    <button id="explode" class="button is-light" type="button">TOGGLE EXPLODE</button>
+                </div>
             </div>
 
             <!-- CHARTS -->
-            <div class="chart" id="chart">
+            <!--<div class="chart" id="chart">
               <div class="chart__bar" year="0"></div>
               <div class="chart__bar" year="1"></div>
               <div class="chart__bar" year="2"></div>
               <div class="chart__bar" year="3"></div>
               <div class="chart__bar" year="4"></div>
-            </div>
+            </div>-->
 
             <!-- DISTRICT LIST-->
             <ul class="district-list">
-                <li><span>Antonsviertel</span></li>
-                <li><span>Bärenkeller</span></li>
-                <li><span>Bergheim</span></li>
-                <li><span>Firnhaberau</span></li>
-                <li><span>Göggingen</span></li>
-                <li><span>Hammerschmiede</span></li>
-                <li><span>Haunstetten</span></li>
-                <li><span>Herrenbach</span></li>
-                <li><span>Hochfeld</span></li>
-                <li><span>Hochzoll</span></li>
-                <li><span>Innenstadt</span></li>
-                <li><span>Inningen</span></li>
-                <li><span>Jakobsviertel</span></li>
-                <li><span>Kriegshaber</span></li>
-                <li><span>Lechhausen</span></li>
-                <li><span>Oberhausen</span></li>
-                <li><span>Pfersee</span></li>
-                <li><span>Spickel</span></li>
-                <li><span>Univiertel</span></li>
+                <li><span class="label__js" id="antonsviertel__label">Antonsviertel</span></li>
+                <li><span class="label__js" id="bärenkeller__label">Bärenkeller</span></li>
+                <li><span class="label__js" id="bergheim__label">Bergheim</span></li>
+                <li><span class="label__js" id="firnhaberau__label">Firnhaberau</span></li>
+                <li><span class="label__js" id="göggingen__label">Göggingen</span></li>
+                <li><span class="label__js" id="hammerschmiede__label">Hammerschmiede</span></li>
+                <li><span class="label__js"id="haunstetten__label">Haunstetten</span></li>
+                <li><span class="label__js" id="herrenbach__label">Herrenbach</span></li>
+                <li><span class="label__js" id="hochfeld__label">Hochfeld</span></li>
+                <li><span class="label__js" id="hochzoll__label">Hochzoll</span></li>
+                <li><span class="label__js" id="innenstadt__label">Innenstadt</span></li>
+                <li><span class="label__js" id="inningen__label">Inningen</span></li>
+                <li><span class="label__js" id="jakobervorstadt__label">Jakobervorstadt</span></li>
+                <li><span class="label__js" id="kriegshaber__label">Kriegshaber</span></li>
+                <li><span class="label__js" id="lechhausen__label">Lechhausen</span></li>
+                <li><span class="label__js" id="oberhausen__label">Oberhausen</span></li>
+                <li><span class="label__js" id="pfersee__label">Pfersee</span></li>
+                <li><span class="label__js" id="spickel__label">Spickel</span></li>
+                <li><span class="label__js" id="textilviertel__label">Texitelviertel</span></li>
+                <li><span class="label__js" id="univiertel__label">Univiertel</span></li>
             </ul>
 
             <!-- MAP -->
@@ -464,6 +477,8 @@
                       </g>
                   </g>
               </svg>
+
+            <div class="legend">TODO LEGENDE</div>
         </div>
 
         <!-- FULLPAGE SCROLL CONTAINERS-->

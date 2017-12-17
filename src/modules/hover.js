@@ -3,7 +3,6 @@ import $ from "jquery";
 
 export function hoverCircle () {
   $('.circle').mouseenter(function(event){
-    console.log(event.target.style.fill);
     $('#' + event.target.id).css({
       "stroke": "#212121",
       "stroke-width": "1.5"
@@ -20,5 +19,24 @@ export function hoverCircle () {
     $('#' + event.target.id.replace('_circle', '')).css({
       "fill": "#212121"
     });
+  })
+}
+
+export function hoverLabel () {
+  $('.label__js').mouseenter(function(event){
+    console.log(event.target.id);
+    let district = event.target.id.replace('__label', '')
+    $('#' + district).css({
+      "stroke": "#212121",
+      "stroke-width": "2.5"
+    });
+  })
+  $('.label__js').mouseleave(function(event){
+    let district = event.target.id.replace('__label', '')
+
+    $('#' + district).css({
+      "stroke": "#FFFFFF",
+      "stroke-width": "0"
+    })
   })
 }

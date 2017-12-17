@@ -13,7 +13,7 @@ import fullpage from './vendor/jquery.fullpage.min.js';
 import createJson from './modules/createJson';
 import { updateColors, updateSize, updateText, updatePositions, updateLabel, updateCounter } from './modules/updateMap';
 import { calculateMapData } from './modules/calculator';
-import { hoverCircle } from './modules/hover';
+import { hoverLabel } from './modules/hover';
 import { drawChart, highlightChart, drawGraph, highlightGraph } from './modules/chart';
 
 import './styles/index.scss';
@@ -44,7 +44,7 @@ const TRANSITION_TIME = config.transitions.time;
 const MAP = d3.select('#map-complete');
 
 // DYNAMIC VARIABLES
-let isAbsolute = true;
+let isAbsolute = false;
 let isExploded = false;
 let datasetOutput = [];
 let chartData = [];
@@ -96,7 +96,7 @@ function outputYear(year_dataset) {
         updateCounter(year_dataset.districts[i].name.toLowerCase(), year_dataset.districts[i].data.students, TRANSITION_TIME);
         updatePositions(year_dataset.districts[i].name.toLowerCase(), isExploded, text, TRANSITION_TIME);
         updateLabel(year_dataset.districts[i].name, circle, text, mapData.radius, TRANSITION_TIME);
-        updateColors(circle, district, mapData.color);
+        updateColors(circle, district, mapData.color, year_dataset.districts[i].name.toLowerCase());
         updateSize(circle, mapData.radius, TRANSITION_TIME);
 
         //updateText(text, year_dataset.districts[i].data.students, TRANSITION_TIME);
@@ -171,6 +171,7 @@ $(document).ready(function(){
     //setupMap();
     buildFullPage();
     yearData(1);
+    hoverLabel();
     //drawGraph(chartData, AUGSBURG_RESIDENTS);
     // hoverCircle();
 });
