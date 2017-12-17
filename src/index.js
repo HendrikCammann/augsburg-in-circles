@@ -11,7 +11,7 @@ import fullpage from './vendor/jquery.fullpage.min.js';
 
 // MODUDLE IMPORTS
 import createJson from './modules/createJson';
-import { updateColors, updateSize, updateText, updatePositions, updateLabel } from './modules/updateMap';
+import { updateColors, updateSize, updateText, updatePositions, updateLabel, updateCounter } from './modules/updateMap';
 import { calculateMapData } from './modules/calculator';
 import { hoverCircle } from './modules/hover';
 import { drawChart, highlightChart, drawGraph, highlightGraph } from './modules/chart';
@@ -93,6 +93,7 @@ function outputYear(year_dataset) {
 
         let mapData = calculateMapData(year_dataset.districts[i].data.students, year_dataset.districts[i].data.residents, STUDENTS_FACTOR, RELATIVE_STUDENTS_FACTOR, P, MAX_PERCENTAGE, GRADIENT, PI, isAbsolute);
 
+        updateCounter(year_dataset.districts[i].name.toLowerCase(), year_dataset.districts[i].data.students, TRANSITION_TIME);
         updatePositions(year_dataset.districts[i].name.toLowerCase(), isExploded, text, TRANSITION_TIME);
         updateLabel(year_dataset.districts[i].name, circle, text, mapData.radius, TRANSITION_TIME);
         updateColors(circle, district, mapData.color);
@@ -118,38 +119,38 @@ function yearData(nextIndex) {
 	switch(nextIndex) {
 		//2016
 		case 1:
-            console.log(2016);
-            outputYear(datasetOutput[nextIndex-1]);
-            highlightChart(nextIndex-1);
-			break;
+      console.log(2016);
+      outputYear(datasetOutput[nextIndex-1]);
+      highlightChart(nextIndex-1);
+      break;
 
 		//2015
 		case 2:
-            console.log(2015);
-            outputYear(datasetOutput[nextIndex-1]);
-            highlightChart(nextIndex-1);
-			break;
+      console.log(2015);
+      outputYear(datasetOutput[nextIndex-1]);
+      highlightChart(nextIndex-1);
+      break;
 
 		//2014
 		case 3:
-            console.log(2014);
-            outputYear(datasetOutput[nextIndex-1]);
-            highlightChart(nextIndex-1);
-			break;
+      console.log(2014);
+      outputYear(datasetOutput[nextIndex-1]);
+      highlightChart(nextIndex-1);
+      break;
 
-        //2013
-        case 4:
-            console.log(2013);
-            outputYear(datasetOutput[nextIndex-1]);
-            highlightChart(nextIndex-1);
-			break;
+    //2013
+    case 4:
+      console.log(2013);
+      outputYear(datasetOutput[nextIndex-1]);
+      highlightChart(nextIndex-1);
+      break;
 
-        //2012
-        case 5:
-            console.log(2012);
-            outputYear(datasetOutput[nextIndex-1]);
-            highlightChart(nextIndex-1);
-			break;
+    //2012
+    case 5:
+      console.log(2012);
+      outputYear(datasetOutput[nextIndex-1]);
+      highlightChart(nextIndex-1);
+		  break;
 
 		default:
 			console.log("default");
