@@ -93,10 +93,9 @@ svg.map-container {
   position: fixed;
   display: inline-block;
   height: 80vh;
-  width: 100%;
+  left: 50%;
   top: 50%;
-  left: 0;
-  margin-top: -35vh;
+  transform: translate(-50%, -50%);
 
   text {
     font-size: 12px;
@@ -106,9 +105,16 @@ svg.map-container {
 }
 
 .year {
-  margin-left: 200px;
+  //margin-left: 200px;
   font-weight: 800;
   font-size: 48px;
+}
+
+.navigation {
+    //text-align: right;
+    #{&}__button {
+
+    }
 }
 
 // GUI
@@ -123,7 +129,8 @@ svg.map-container {
 
 .district-list {
     position: fixed;
-    top: 21%;
+    top: 50%;
+    transform: translateY(-50%);
     right: 0%;
     padding-right: 100px;
     text-align: right;
@@ -136,7 +143,6 @@ svg.map-container {
         margin: 3px 0;
         font-size: 12px;
         color: $black;
-        //background-color: $white;
         border: 2px solid $lightgray;
         border-radius: 15px;
         border-bottom-left-radius: 0;

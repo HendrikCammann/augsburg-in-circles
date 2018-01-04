@@ -3,6 +3,10 @@
     {
       "year": 2016,
       "name": "Oberhausen",
+      "change": {
+          "last": 0,
+          "next": 0
+      },
       "data": {
         "size": 720.5,
         "residents": 27614,
@@ -12,6 +16,10 @@
     {
       "year": 2015,
       "name": "Oberhausen",
+      "change": {
+          "last": 0,
+          "next": 0
+      },
       "data": {
         "size": 720.5,
         "residents": 26920,
@@ -21,6 +29,10 @@
     {
       "year": 2014,
       "name": "Oberhausen",
+      "change": {
+          "last": 0,
+          "next": 0
+      },
       "data": {
         "size": 720.5,
         "residents": 26319,
@@ -30,6 +42,10 @@
     {
       "year": 2013,
       "name": "Oberhausen",
+      "change": {
+          "last": 0,
+          "next": 0
+      },
       "data": {
         "size": 720.5,
         "residents": 25444,
@@ -39,6 +55,10 @@
     {
       "year": 2012,
       "name": "Oberhausen",
+      "change": {
+          "last": 0,
+          "next": 0
+      },
       "data": {
         "size": 720.5,
         "residents": 24567,

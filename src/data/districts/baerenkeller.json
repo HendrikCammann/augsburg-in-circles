@@ -3,6 +3,10 @@
     {
       "year": 2016,
       "name": "Bärenkeller",
+      "change": {
+          "last": 0,
+          "next": 0
+      },
       "data": {
         "size": 313.4,
         "residents": 7637,
@@ -12,6 +16,10 @@
     {
       "year": 2015,
       "name": "Bärenkeller",
+      "change": {
+          "last": 0,
+          "next": 0
+      },
       "data": {
         "size": 313.4,
         "residents": 7619,
@@ -21,6 +29,10 @@
     {
       "year": 2014,
       "name": "Bärenkeller",
+      "change": {
+          "last": 0,
+          "next": 0
+      },
       "data": {
         "size": 313.4,
         "residents": 7483,
@@ -30,6 +42,10 @@
     {
       "year": 2013,
       "name": "Bärenkeller",
+      "change": {
+          "last": 0,
+          "next": 0
+      },
       "data": {
         "size": 313.4,
         "residents": 7329,
@@ -39,6 +55,10 @@
     {
       "year": 2012,
       "name": "Bärenkeller",
+      "change": {
+          "last": 0,
+          "next": 0
+      },
       "data": {
         "size": 313.4,
         "residents": 7253,

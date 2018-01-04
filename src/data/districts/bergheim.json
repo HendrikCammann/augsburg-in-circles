@@ -3,6 +3,10 @@
     {
       "year": 2016,
       "name": "Bergheim",
+      "change": {
+          "last": 0,
+          "next": 0
+      },
       "data": {
         "size": 2207.6,
         "residents": 2617,
@@ -12,6 +16,10 @@
     {
       "year": 2015,
       "name": "Bergheim",
+      "change": {
+          "last": 0,
+          "next": 0
+      },
       "data": {
         "size": 2207.6,
         "residents": 2583,
@@ -21,6 +29,10 @@
     {
       "year": 2014,
       "name": "Bergheim",
+      "change": {
+          "last": 0,
+          "next": 0
+      },
       "data": {
         "size": 2207.6,
         "residents": 2596,
@@ -30,6 +42,10 @@
     {
       "year": 2013,
       "name": "Bergheim",
+      "change": {
+          "last": 0,
+          "next": 0
+      },
       "data": {
         "size": 2207.6,
         "residents": 2608,
@@ -39,6 +55,10 @@
     {
       "year": 2012,
       "name": "Bergheim",
+      "change": {
+          "last": 0,
+          "next": 0
+      },
       "data": {
         "size": 2207.6,
         "residents": 2603,

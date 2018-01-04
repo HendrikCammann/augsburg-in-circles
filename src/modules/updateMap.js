@@ -52,32 +52,36 @@ export function updatePositions(name, isExploded, text, time) {
     }
 }
 
-export function updateLabel(name, district, districtText, radius, time) {
+export function updateLabel(name, change, scrollDirection, district, districtText, radius, time) {
     let posX;
+    let changeVal;
+
+    if(scrollDirection) {
+        changeVal = change.next;
+    } else {
+        changeVal = change.last;
+    }
 
     if(parseFloat(district.attr('cx')) < 265) {
         posX = parseFloat(district.attr('cx')) - radius;
         districtText.attr('text-anchor', 'end');
-        districtText.text(name + ' --');
+        districtText.text(changeVal + ' :' + name + ' --');
     } else {
         posX = parseFloat(district.attr('cx')) + radius;
         districtText.attr('text-anchor', 'start');
-        districtText.text('-- ' + name);
+        districtText.text('-- ' + name + ': ' + changeVal);
     }
 
     let posY = parseFloat(district.attr('cy')) + 3;
     if(name.toLowerCase() === 'innenstadt') {
-      console.log('hi');
       posY += 20;
       posY -= 5;
     }
     if(name.toLowerCase() === 'jakobervorstadt') {
-      console.log('hi');
       posY -= 10;
       posY -= 5;
     }
     if(name.toLowerCase() === 'univiertel') {
-      console.log('hi');
       posX += 10;
       posY += 20;
     }

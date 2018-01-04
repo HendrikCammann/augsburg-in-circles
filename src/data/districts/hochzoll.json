@@ -3,6 +3,10 @@
     {
       "year": 2016,
       "name": "Hochzoll",
+      "change": {
+          "last": 0,
+          "next": 0
+      },
       "data": {
         "size": 508.9,
         "residents": 20619,
@@ -12,6 +16,10 @@
     {
       "year": 2015,
       "name": "Hochzoll",
+      "change": {
+          "last": 0,
+          "next": 0
+      },
       "data": {
         "size": 508.9,
         "residents": 20413,
@@ -21,6 +29,10 @@
     {
       "year": 2014,
       "name": "Hochzoll",
+      "change": {
+          "last": 0,
+          "next": 0
+      },
       "data": {
         "size": 508.9,
         "residents": 20469,
@@ -30,6 +42,10 @@
     {
       "year": 2013,
       "name": "Hochzoll",
+      "change": {
+          "last": 0,
+          "next": 0
+      },
       "data": {
         "size": 508.9,
         "residents": 20324,
@@ -39,6 +55,10 @@
     {
       "year": 2012,
       "name": "Hochzoll",
+      "change": {
+          "last": 0,
+          "next": 0
+      },
       "data": {
         "size": 508.9,
         "residents": 20311,

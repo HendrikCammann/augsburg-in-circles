@@ -3,6 +3,10 @@
     {
       "year": 2016,
       "name": "Pfersee",
+      "change": {
+          "last": 0,
+          "next": 0
+      },
       "data": {
         "size": 414.9,
         "residents": 26977,
@@ -12,6 +16,10 @@
     {
       "year": 2015,
       "name": "Pfersee",
+      "change": {
+          "last": 0,
+          "next": 0
+      },
       "data": {
         "size": 414.9,
         "residents": 26539,
@@ -21,6 +29,10 @@
     {
       "year": 2014,
       "name": "Pfersee",
+      "change": {
+          "last": 0,
+          "next": 0
+      },
       "data": {
         "size": 414.9,
         "residents": 26071,
@@ -30,6 +42,10 @@
     {
       "year": 2013,
       "name": "Pfersee",
+      "change": {
+          "last": 0,
+          "next": 0
+      },
       "data": {
         "size": 414.9,
         "residents": 25582,
@@ -39,6 +55,10 @@
     {
       "year": 2012,
       "name": "Pfersee",
+      "change": {
+          "last": 0,
+          "next": 0
+      },
       "data": {
         "size": 414.9,
         "residents": 25137,

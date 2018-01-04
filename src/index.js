@@ -46,9 +46,12 @@ const MAP = d3.select('#map-complete');
 // DYNAMIC VARIABLES
 let isAbsolute = false;
 let isExploded = false;
+let navigationUpwards = false;
 let datasetOutput = [];
 let chartData = [];
 let activeYear;
+
+let lastIndex = 0;
 
 // FUNCTIONS
 function toggleAbsolute() {
@@ -102,11 +105,19 @@ function outputYear(year_dataset) {
 
         updateCounter(year_dataset.districts[i].name.toLowerCase(), year_dataset.districts[i].data.students, TRANSITION_TIME);
         updatePositions(year_dataset.districts[i].name.toLowerCase(), isExploded, text, TRANSITION_TIME);
-        updateLabel(year_dataset.districts[i].name, circle, text, mapData.radius, TRANSITION_TIME);
+        updateLabel(year_dataset.districts[i].name, year_dataset.districts[i].change, navigationUpwards, circle, text, mapData.radius, TRANSITION_TIME);
         updateColors(circle, district, mapData.color, year_dataset.districts[i].name.toLowerCase());
         updateSize(circle, mapData.radius, TRANSITION_TIME);
 
         //updateText(text, year_dataset.districts[i].data.students, TRANSITION_TIME);
+    }
+}
+
+function checkScrollDirection(actual, last) {
+    if (actual > last) {
+        navigationUpwards = true;
+    } else {
+        navigationUpwards = false;
     }
 }
 
@@ -123,39 +134,34 @@ function buildFullPage() {
 
 // FILL IN CORRECT DATA
 function yearData(nextIndex) {
-  console.log(nextIndex)
+  checkScrollDirection(nextIndex, lastIndex);
 	switch(nextIndex) {
 		//2016
 		case 1:
-      console.log(2016);
       outputYear(datasetOutput[nextIndex-1]);
       highlightChart(nextIndex-1);
       break;
 
 		//2015
 		case 2:
-      console.log(2015);
       outputYear(datasetOutput[nextIndex-1]);
       highlightChart(nextIndex-1);
       break;
 
 		//2014
 		case 3:
-      console.log(2014);
       outputYear(datasetOutput[nextIndex-1]);
       highlightChart(nextIndex-1);
       break;
 
     //2013
     case 4:
-      console.log(2013);
       outputYear(datasetOutput[nextIndex-1]);
       highlightChart(nextIndex-1);
       break;
 
     //2012
     case 5:
-      console.log(2012);
       outputYear(datasetOutput[nextIndex-1]);
       highlightChart(nextIndex-1);
 		  break;
@@ -163,10 +169,11 @@ function yearData(nextIndex) {
 		default:
 			console.log("default");
 	}
+  lastIndex = nextIndex;
 };
 
 // RUNNING CODE
-$(document).ready(function(){
+$(document).ready(function() {
     document.getElementById("toggle").addEventListener("click", toggleAbsolute);
     document.getElementById("explode").addEventListener("click", toggleExploded);
 
