@@ -2,7 +2,7 @@
 import config from '../config/config.json';
 import * as d3 from "d3";
 import { TweenMax, TweenLite, Power2, TimelineLite } from "gsap";
-import MorphSVGPlugin from 'gsap/MorphSVGPlugin';
+import MorphSVGPlugin from '../vendor/MorphSVGPlugin';
 
 export function updateColors(districtCircle, district, color, name) {
     districtCircle.style('fill', color);
@@ -61,8 +61,6 @@ export function updateLabel(name, change, scrollDirection, district, container, 
     } catch(err) {
 
     }
-
-    console.log(oldVal);
 
     if(scrollDirection) {
         changeVal = change.next;

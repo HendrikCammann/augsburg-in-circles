@@ -66,6 +66,9 @@ function toggleAbsolute() {
 
 function toggleExploded() {
   isExploded = !isExploded;
+  $('.district-list').toggle( "slow", function() {
+    // Animation complete.
+  });
   outputYear(activeYear);
 }
 
@@ -95,6 +98,7 @@ function resetVisual(data) {
 
 function outputYear(year_dataset) {
     activeYear = year_dataset;
+    document.getElementById('year').innerHTML = year_dataset.year;
     for (let i = 0; i < year_dataset.districts.length; i++) {
         let circle = d3.select('#' + year_dataset.districts[i].name.toLowerCase() + '_circle');
         let container = d3.select('#' + year_dataset.districts[i].name.toLowerCase() + '_container');
@@ -137,7 +141,6 @@ function buildFullPage() {
 // FILL IN CORRECT DATA
 function yearData(nextIndex) {
   checkScrollDirection(nextIndex, lastIndex);
-  document.getElementById('year').innerHTML = datasetOutput[nextIndex-1].year;
 	switch(nextIndex) {
 		//2016
 		case 1:
