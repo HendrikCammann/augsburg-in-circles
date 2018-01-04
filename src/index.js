@@ -14,6 +14,7 @@ import createJson from './modules/createJson';
 import { updateColors, updateSize, updateText, updatePositions, updateLabel, updateCounter } from './modules/updateMap';
 import { calculateMapData } from './modules/calculator';
 import { hoverLabel, hoverDistrict } from './modules/hover';
+import pickGradientColor from './modules/pickGradientColor';
 import { drawChart, highlightChart, drawGraph, highlightGraph } from './modules/chart';
 
 import './styles/index.scss';
@@ -61,6 +62,7 @@ function toggleAbsolute() {
   } else {
     document.getElementById('toggle').innerHTML = 'is ABSOLUTE';
   }
+  setupLegend(isAbsolute);
   outputYear(activeYear);
 }
 
@@ -123,6 +125,29 @@ function checkScrollDirection(actual, last) {
     }
 }
 
+function setupLegend(isAbsolute) {
+  let dots = document.getElementById('colors');
+  let colorStop = 0;
+  let color;
+
+  for (let i = 0; i < dots.children.length; i++) {
+    if(colorStop >= GRADIENT.colorstop) {
+      color = pickGradientColor(GRADIENT.start, GRADIENT.mid, colorStop);
+    } else {
+      color = pickGradientColor(GRADIENT.mid, GRADIENT.end, colorStop);
+    }
+    dots.children[i].style.backgroundColor = '#' + color;
+    colorStop += 0.05;
+  }
+  if(isAbsolute) {
+    dots.innerHTML = dots.innerHTML.replace(DATASET.maxVal.relativeStudents.toFixed(2) * 100 + ' Studenten/ 100 Einwohner', '');
+    dots.innerHTML += DATASET.maxVal.students + ' Studenten';
+  } else {
+    dots.innerHTML = dots.innerHTML.replace(DATASET.maxVal.students + ' Studenten', '');
+    dots.innerHTML += DATASET.maxVal.relativeStudents.toFixed(2) * 100 + ' Studenten/ 100 Einwohner';
+  }
+}
+
 // SCROLL INTERACTION
 function buildFullPage() {
     $('#fullpage').fullpage({
@@ -180,9 +205,11 @@ function yearData(nextIndex) {
 
 // RUNNING CODE
 $(document).ready(function() {
+    console.log(DATASET);
     document.getElementById("toggle").addEventListener("click", toggleAbsolute);
     document.getElementById("explode").addEventListener("click", toggleExploded);
 
+    setupLegend(isAbsolute);
     setupDataPackages();
     resetVisual(datasetOutput[0]);
     buildFullPage();

@@ -157,6 +157,17 @@ svg.map-container {
     text-align: center;
     color: black;
 }
+
+.colors {
+  &__dot {
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    background: red;
+    border-radius: 50%;
+  }
+}
+
 .district-list {
     position: fixed;
     top: 50%;
