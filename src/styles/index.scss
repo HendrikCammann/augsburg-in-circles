@@ -135,6 +135,16 @@ svg.map-container {
 }
 
 // GUI
+#fp-nav ul li a span {
+  background: $black;
+}
+
+#fp-nav ul li a.active span {
+  width: 10px;
+  height: 10px;
+  margin: -5px 0 0 -5px;
+
+}
 
 .legend {
     position: fixed;

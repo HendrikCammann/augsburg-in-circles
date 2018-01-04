@@ -126,7 +126,11 @@ function checkScrollDirection(actual, last) {
 function buildFullPage() {
     $('#fullpage').fullpage({
         anchors:['2016', '2015', '2014', '2013', '2012'],
-        css3: false,
+        css3: true,
+        navigation: true,
+        navigationPosition: 'left',
+        keyboardScrolling: true,
+        controlArrows: true,
         onLeave: function(index, nextIndex, direction) {
     		yearData(nextIndex);
     	}
