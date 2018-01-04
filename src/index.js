@@ -94,7 +94,6 @@ function resetVisual(data) {
 }
 
 function outputYear(year_dataset) {
-    //document.getElementById('year').innerHTML = year_dataset.year;
     activeYear = year_dataset;
     for (let i = 0; i < year_dataset.districts.length; i++) {
         let circle = d3.select('#' + year_dataset.districts[i].name.toLowerCase() + '_circle');
@@ -109,8 +108,6 @@ function outputYear(year_dataset) {
         updateLabel(year_dataset.districts[i].name, year_dataset.districts[i].change, navigationUpwards, circle, container, text, mapData.radius, TRANSITION_TIME);
         updateColors(circle, district, mapData.color, year_dataset.districts[i].name.toLowerCase());
         updateSize(circle, mapData.radius, TRANSITION_TIME);
-
-        //updateText(text, year_dataset.districts[i].data.students, TRANSITION_TIME);
     }
 }
 

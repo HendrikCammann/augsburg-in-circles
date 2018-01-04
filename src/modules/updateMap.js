@@ -52,6 +52,17 @@ export function updateLabel(name, change, scrollDirection, district, container, 
     let posX;
     let changeVal;
     let id = name.toLowerCase() + '__text-anim';
+    let oldVal = 0;
+    let item;
+
+    try {
+      item = d3.select('#' + id);
+      oldVal = item.text();
+    } catch(err) {
+
+    }
+
+    console.log(oldVal);
 
     if(scrollDirection) {
         changeVal = change.next;
@@ -81,9 +92,8 @@ export function updateLabel(name, change, scrollDirection, district, container, 
         }
     }
 
-    let item = d3.select('#' + id);
-    console.log(item);
-    item.transition().duration(time).tween('text', tweenText(item, changeVal, item.text()));
+    item = d3.select('#' + id);
+    item.transition().duration(time).tween('text', tweenText(item, changeVal, oldVal));
 
     let posY = parseFloat(district.attr('cy')) - 10;
 
