@@ -3,6 +3,10 @@
     {
       "year": 2016,
       "name": "Haunstetten",
+      "change": {
+          "last": 0,
+          "next": 0
+      },
       "data": {
         "size": 3234.6,
         "residents": 27523,
@@ -12,6 +16,10 @@
     {
       "year": 2015,
       "name": "Haunstetten",
+      "change": {
+          "last": 0,
+          "next": 0
+      },
       "data": {
         "size": 3234.6,
         "residents": 27046,
@@ -21,6 +29,10 @@
     {
       "year": 2014,
       "name": "Haunstetten",
+      "change": {
+          "last": 0,
+          "next": 0
+      },
       "data": {
         "size": 3234.6,
         "residents": 26832,
@@ -30,18 +42,26 @@
     {
       "year": 2013,
       "name": "Haunstetten",
+      "change": {
+          "last": 0,
+          "next": 0
+      },
       "data": {
         "size": 3234.6,
-        "residents": 5168,
+        "residents": 26595,
         "students": 827
       }
     },
     {
       "year": 2012,
       "name": "Haunstetten",
+      "change": {
+          "last": 0,
+          "next": 0
+      },
       "data": {
         "size": 3234.6,
-        "residents": 5168,
+        "residents": 26553,
         "students": 799
       }
     }

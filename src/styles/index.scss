@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans:400,700');
+@import '../../node_modules/bulma/css/bulma.css';
+@import '../vendor/jquery.fullpage.min.css';
+@import '../vendor/grid.scss';
+
+$dark_gray: #6B6B6B;
+$black: #4D4D4D;
+$lightgray: #F2F2F2;
+$white: #fff;
+
+body {
+  font-family: 'Fira Sans', sans-serif;
+  background-color: #F2F2F2;
+}
+
+@mixin clearfix() {
+  :before, :after {
+    content: "";
+    display: table;
+  }
+  :after {
+    clear: both;
+  }
+}
+
+.section {
+    padding: 0;
+    margin: 0;
+}
+
+.row {
+  width: 100%;
+  @include clearfix();
+}
+
+.column {
+    float: left;
+    width: 100%;
+    &--half {
+        width: 50%;
+    }
+    &--right {
+      float: right;
+    }
+}
+
+.content {
+    &--right {
+        text-align: right;
+    }
+}
+
+.menu {
+    position: absolute;
+    padding-top: 30px;
+    background-color: $lightgray;
+}
+
+.logo {
+    #{&}__icon {
+        display: inline-block;
+        background-image: url('../maps/logo.svg');
+        height: 46px;
+        width: 35px;
+        margin-right: 10px;
+        background-repeat: no-repeat;
+    }
+    #{&}__text {
+        transform: translate(0, -1px);
+        display: inline-block;
+        font-size: 12px;
+        font-weight: 400;
+        color: $dark_gray;
+
+        &--strong {
+            line-height: 24px;
+            font-weight: 700;
+            font-size: 18px;
+            color: $black;
+        }
+    }
+}
+
+.toggle {
+    z-index: 1000;
+    position: absolute;
+    right: 0;
+}
+
+// MAP
+svg.map-container {
+  z-index: 10;
+  position: fixed;
+  height: 100vh;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -45%);
+
+  .change {
+    fill: $black;
+    font-size: 12px;
+    font-weight: 600;
+
+    &--neg {
+      fill: red;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    &--pos {
+      fill: green;
+      font-size: 12px;
+      font-weight: 600;
+    }
+  }
+
+  text {
+    font-size: 10px;
+    pointer-events: none;
+    font-weight: 400;
+  }
+}
+
+.year {
+  margin-left: 150px;
+  font-weight: 800;
+  font-size: 48px;
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%)
+}
+
+.navigation {
+    //text-align: right;
+    #{&}__button {
+
+    }
+}
+
+// GUI
+#fp-nav ul li a span {
+  background: $black;
+}
+
+#fp-nav ul li a.active span {
+  width: 10px;
+  height: 10px;
+  margin: -5px 0 0 -5px;
+
+}
+
+.legend {
+    position: fixed;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: black;
+}
+.district-list {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0%;
+    padding-right: 100px;
+    text-align: right;
+    z-index: 2130;
+
+    li span {
+        cursor: pointer;
+        display: inline-block;
+        padding: 2px 10px;
+        margin: 3px 0;
+        font-size: 12px;
+        color: $black;
+        border: 2px solid $lightgray;
+        border-radius: 15px;
+        border-bottom-left-radius: 0;
+    }
+}
+.chart {
+    position: absolute;
+    top: 0;
+    left: 0;
+  &__bar {
+    background-color: lightgray;
+    font-size: 12px;
+    line-height: 24px;
+    height: 30px;
+    text-align: right;
+    padding: 3px;
+    margin: 5px;
+    color: white;
+
+    &:hover {
+      background-color: green;
+    }
+
+    &--active {
+      background-color: green;
+    }
+  }
+}

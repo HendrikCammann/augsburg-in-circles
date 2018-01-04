@@ -3,6 +3,10 @@
     {
       "year": 2016,
       "name": "Herrenbach",
+      "change": {
+          "last": 0,
+          "next": 0
+      },
       "data": {
         "size": 142.4,
         "residents": 10663,
@@ -12,6 +16,10 @@
     {
       "year": 2015,
       "name": "Herrenbach",
+      "change": {
+          "last": 0,
+          "next": 0
+      },
       "data": {
         "size": 142.4,
         "residents": 10537,
@@ -21,6 +29,10 @@
     {
       "year": 2014,
       "name": "Herrenbach",
+      "change": {
+          "last": 0,
+          "next": 0
+      },
       "data": {
         "size": 142.4,
         "residents": 10541,
@@ -30,18 +42,26 @@
     {
       "year": 2013,
       "name": "Herrenbach",
+      "change": {
+          "last": 0,
+          "next": 0
+      },
       "data": {
         "size": 142.4,
-        "residents": 5168,
+        "residents": 10289,
         "students": 274
       }
     },
     {
       "year": 2012,
       "name": "Herrenbach",
+      "change": {
+          "last": 0,
+          "next": 0
+      },
       "data": {
         "size": 142.4,
-        "residents": 5168,
+        "residents": 10153,
         "students": 261
       }
     }

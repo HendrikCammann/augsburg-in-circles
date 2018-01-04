@@ -3,6 +3,10 @@
     {
       "year": 2016,
       "name": "Spickel",
+      "change": {
+          "last": 0,
+          "next": 0
+      },
       "data": {
         "size": 345.2,
         "residents": 2687,
@@ -12,6 +16,10 @@
     {
       "year": 2015,
       "name": "Spickel",
+      "change": {
+          "last": 0,
+          "next": 0
+      },
       "data": {
         "size": 345.2,
         "residents": 2620,
@@ -21,6 +29,10 @@
     {
       "year": 2014,
       "name": "Spickel",
+      "change": {
+          "last": 0,
+          "next": 0
+      },
       "data": {
         "size": 345.2,
         "residents": 2597,
@@ -30,18 +42,26 @@
     {
       "year": 2013,
       "name": "Spickel",
+      "change": {
+          "last": 0,
+          "next": 0
+      },
       "data": {
         "size": 345.2,
-        "residents": 5168,
+        "residents": 2618,
         "students": 70
       }
     },
     {
       "year": 2012,
       "name": "Spickel",
+      "change": {
+          "last": 0,
+          "next": 0
+      },
       "data": {
         "size": 345.2,
-        "residents": 5168,
+        "residents": 2641,
         "students": 58
       }
     }

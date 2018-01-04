@@ -3,6 +3,10 @@
     {
       "year": 2016,
       "name": "Univiertel",
+      "change": {
+          "last": 0,
+          "next": 0
+      },
       "data": {
         "size": 400.2,
         "residents": 11109,
@@ -12,6 +16,10 @@
     {
       "year": 2015,
       "name": "Univiertel",
+      "change": {
+          "last": 0,
+          "next": 0
+      },
       "data": {
         "size": 400.2,
         "residents": 11055,
@@ -21,6 +29,10 @@
     {
       "year": 2014,
       "name": "Univiertel",
+      "change": {
+          "last": 0,
+          "next": 0
+      },
       "data": {
         "size": 400.2,
         "residents": 11029,
@@ -30,18 +42,26 @@
     {
       "year": 2013,
       "name": "Univiertel",
+      "change": {
+          "last": 0,
+          "next": 0
+      },
       "data": {
         "size": 400.2,
-        "residents": 5168,
+        "residents": 10983,
         "students": 648
       }
     },
     {
       "year": 2012,
       "name": "Univiertel",
+      "change": {
+          "last": 0,
+          "next": 0
+      },
       "data": {
         "size": 400.2,
-        "residents": 5168,
+        "residents": 10900,
         "students": 575
       }
     }

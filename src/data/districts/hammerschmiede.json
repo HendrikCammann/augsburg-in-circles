@@ -3,6 +3,10 @@
     {
       "year": 2016,
       "name": "Hammerschmiede",
+      "change": {
+          "last": 0,
+          "next": 0
+      },
       "data": {
         "size": 901.6,
         "residents": 7260,
@@ -12,6 +16,10 @@
     {
       "year": 2015,
       "name": "Hammerschmiede",
+      "change": {
+          "last": 0,
+          "next": 0
+      },
       "data": {
         "size": 901.6,
         "residents": 7163,
@@ -21,6 +29,10 @@
     {
       "year": 2014,
       "name": "Hammerschmiede",
+      "change": {
+          "last": 0,
+          "next": 0
+      },
       "data": {
         "size": 901.6,
         "residents": 7084,
@@ -30,18 +42,26 @@
     {
       "year": 2013,
       "name": "Hammerschmiede",
+      "change": {
+          "last": 0,
+          "next": 0
+      },
       "data": {
         "size": 901.6,
-        "residents": 5168,
+        "residents": 7079,
         "students": 110
       }
     },
     {
       "year": 2012,
       "name": "Hammerschmiede",
+      "change": {
+          "last": 0,
+          "next": 0
+      },
       "data": {
         "size": 901.6,
-        "residents": 5168,
+        "residents": 7013,
         "students": 99
       }
     }

@@ -3,6 +3,10 @@
     {
       "year": 2016,
       "name": "Lechhausen",
+      "change": {
+          "last": 0,
+          "next": 0
+      },
       "data": {
         "size": 1049.1,
         "residents": 35871,
@@ -12,6 +16,10 @@
     {
       "year": 2015,
       "name": "Lechhausen",
+      "change": {
+          "last": 0,
+          "next": 0
+      },
       "data": {
         "size": 1049.1,
         "residents": 35604,
@@ -21,6 +29,10 @@
     {
       "year": 2014,
       "name": "Lechhausen",
+      "change": {
+          "last": 0,
+          "next": 0
+      },
       "data": {
         "size": 1049.1,
         "residents": 34692,
@@ -30,18 +42,26 @@
     {
       "year": 2013,
       "name": "Lechhausen",
+      "change": {
+          "last": 0,
+          "next": 0
+      },
       "data": {
         "size": 1049.1,
-        "residents": 5168,
+        "residents": 33865,
         "students": 577
       }
     },
     {
       "year": 2012,
       "name": "Lechhausen",
+      "change": {
+          "last": 0,
+          "next": 0
+      },
       "data": {
         "size": 1049.1,
-        "residents": 5168,
+        "residents": 33309,
         "students": 543
       }
     }

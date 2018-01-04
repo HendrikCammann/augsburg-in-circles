@@ -3,6 +3,10 @@
     {
       "year": 2016,
       "name": "Jakobervorstadt",
+      "change": {
+          "last": 0,
+          "next": 0
+      },
       "data": {
         "size": 90.2,
         "residents": 10754,
@@ -12,6 +16,10 @@
     {
       "year": 2015,
       "name": "Jakobervorstadt",
+      "change": {
+          "last": 0,
+          "next": 0
+      },
       "data": {
         "size": 90.2,
         "residents": 10584,
@@ -21,6 +29,10 @@
     {
       "year": 2014,
       "name": "Jakobervorstadt",
+      "change": {
+          "last": 0,
+          "next": 0
+      },
       "data": {
         "size": 90.2,
         "residents": 10345,
@@ -30,18 +42,26 @@
     {
       "year": 2013,
       "name": "Jakobervorstadt",
+      "change": {
+          "last": 0,
+          "next": 0
+      },
       "data": {
         "size": 90.2,
-        "residents": 5168,
+        "residents": 10228,
         "students": 699
       }
     },
     {
       "year": 2012,
       "name": "Jakobervorstadt",
+      "change": {
+          "last": 0,
+          "next": 0
+      },
       "data": {
         "size": 90.2,
-        "residents": 5168,
+        "residents": 10112,
         "students": 636
       }
     }

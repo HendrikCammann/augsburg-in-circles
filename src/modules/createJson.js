@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import augsburg from '../data/augsburg.json';
 
 import _lechhausen from '../data/districts/lechhausen.json';
@@ -27,12 +29,35 @@ export default function createJson() {
 	for (let i = 0; i < augsburg.data.length; i++) {
 		for (let j = 0; j < _districts.length; j++) {
 			augsburg.data[i].districts.push(_districts[j].data[i]);
+
 			if(_districts[j].data[i].data.residents > augsburg.maxVal.residents) {
 				augsburg.maxVal.residents = _districts[j].data[i].data.residents;
 			}
+
 			if(_districts[j].data[i].data.students > augsburg.maxVal.students) {
 				augsburg.maxVal.students = _districts[j].data[i].data.students;
 			}
+
+			let relative = _districts[j].data[i].data.students / _districts[j].data[i].data.residents;
+			if(relative > augsburg.maxVal.relativeStudents) {
+				augsburg.maxVal.relativeStudents = relative;
+			}
+
+			if(augsburg.data[i].population > augsburg.maxVal.population) {
+				augsburg.maxVal.population = augsburg.data[i].population;
+			}
+
+			if(_districts[j].data[i].year == 2016) {
+				_districts[j].data[i].change.last = (_districts[j].data[i].data.students - _districts[j].data[i+1].data.students);
+				_districts[j].data[i].change.next = 0;
+			} else if (_districts[j].data[i].year == 2012) {
+				_districts[j].data[i].change.last = 0;
+				_districts[j].data[i].change.next = (_districts[j].data[i].data.students - _districts[j].data[i-1].data.students);
+			} else {
+				_districts[j].data[i].change.last = (_districts[j].data[i].data.students - _districts[j].data[i+1].data.students);
+				_districts[j].data[i].change.next = (_districts[j].data[i].data.students - _districts[j].data[i-1].data.students);
+			}
+
 		}
 	}
 	return augsburg;

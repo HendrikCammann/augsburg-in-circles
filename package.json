@@ -51,8 +51,13 @@
     "webpack-merge": "4.1.0"
   },
   "dependencies": {
+    "@ibm/type": "^0.5.2",
+    "bootstrap": "^4.0.0-alpha.6",
+    "bulma": "^0.6.1",
     "d3": "^4.11.0",
     "gradient": "^0.2.0",
+    "gsap": "^1.20.3",
+    "jquery": "^3.2.1",
     "rgb-hex": "^2.1.0"
   }
 }
