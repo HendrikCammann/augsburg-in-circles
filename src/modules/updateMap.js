@@ -7,7 +7,6 @@ import MorphSVGPlugin from 'gsap/MorphSVGPlugin';
 export function updateColors(districtCircle, district, color, name) {
     districtCircle.style('fill', color);
     district.style('fill', color);
-    // document.getElementById(name + '__label').style.color = "#" + color;
 }
 
 export function updateSize(districtCircle, radius, time) {
@@ -18,8 +17,8 @@ export function updateText(districtText, value, time) {
     districtText.transition().duration(time).tween('text', tweenText(districtText, value, districtText.text()));
 }
 
-export function updatePositions(name, isExploded, text, time) {
-    MorphSVGPlugin.convertToPath("rect, ellipse, line, polygon, polyline");
+export function updatePositions(name, isExploded, container, time) {
+    MorphSVGPlugin.convertToPath("ellipse, line, polygon, polyline");
 
     let tl = new TimelineMax({
       repeat: 0,
@@ -38,7 +37,7 @@ export function updatePositions(name, isExploded, text, time) {
           //fill: '#4CAF50',
           ease: Back.easeInOut
         })
-        text.transition().attr('opacity', 0).duration(time/10);
+        container.transition().attr('opacity', 0).duration(time/10);
     } else {
         tl.to('#' + name, 1, {
           morphSVG: {
@@ -47,12 +46,12 @@ export function updatePositions(name, isExploded, text, time) {
           stroke: '#FFFFFF',
           ease: Back.easeInOut
         })
-        text.transition().delay(500).attr('opacity', 1).duration(time);
+        container.transition().delay(500).attr('opacity', 1).duration(time);
         d3.select('#counters').transition().attr('opacity', '0').duration(time/2);
     }
 }
 
-export function updateLabel(name, change, scrollDirection, district, districtText, radius, time) {
+export function updateLabel(name, change, scrollDirection, district, container, districtText, districtChange, radius, time) {
     let posX;
     let changeVal;
 
@@ -63,16 +62,25 @@ export function updateLabel(name, change, scrollDirection, district, districtTex
     }
 
     if(parseFloat(district.attr('cx')) < 265) {
-        posX = parseFloat(district.attr('cx')) - radius;
-        districtText.attr('text-anchor', 'end');
-        districtText.text(changeVal + ' :' + name + ' --');
+        posX = parseFloat(district.attr('cx')) - radius + 2;
+        container.attr('text-anchor', 'end');
+        if(changeVal > 0) {
+          districtText.text(name + ' \u2191+' + changeVal + ' \u2014');
+        } else {
+          districtText.text(name + ' \u2193' + changeVal + ' \u2014');
+        }
     } else {
-        posX = parseFloat(district.attr('cx')) + radius;
-        districtText.attr('text-anchor', 'start');
-        districtText.text('-- ' + name + ': ' + changeVal);
+        posX = parseFloat(district.attr('cx')) + radius - 2;
+        container.attr('text-anchor', 'start');
+        if(changeVal >= 0) {
+          districtText.text('\u2014 ' + name + ' \u2191+' + changeVal);
+        } else {
+          districtText.text('\u2014 ' + name + ' \u2193' + changeVal);
+        }
     }
 
-    let posY = parseFloat(district.attr('cy')) + 3;
+    let posY = parseFloat(district.attr('cy')) - 10;
+
     if(name.toLowerCase() === 'innenstadt') {
       posY += 20;
       posY -= 5;
@@ -86,7 +94,7 @@ export function updateLabel(name, change, scrollDirection, district, districtTex
       posY += 20;
     }
 
-    districtText.attr('dx', posX).attr('dy', posY);
+    container.attr('x', posX).attr('y', posY);
 }
 
 export function updateCounter(name, students,time) {
