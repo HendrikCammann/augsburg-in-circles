@@ -132,7 +132,7 @@ function buildFullPage() {
         keyboardScrolling: true,
         controlArrows: true,
         onLeave: function(index, nextIndex, direction) {
-    		yearData(nextIndex);
+    		    yearData(nextIndex);
     	}
     });
 }
@@ -140,6 +140,7 @@ function buildFullPage() {
 // FILL IN CORRECT DATA
 function yearData(nextIndex) {
   checkScrollDirection(nextIndex, lastIndex);
+  document.getElementById('year').innerHTML = datasetOutput[nextIndex-1].year;
 	switch(nextIndex) {
 		//2016
 		case 1:

@@ -51,6 +51,7 @@ export function updatePositions(name, isExploded, container, time) {
 export function updateLabel(name, change, scrollDirection, district, container, districtText, radius, time) {
     let posX;
     let changeVal;
+    let id = name.toLowerCase() + '__text-anim';
 
     if(scrollDirection) {
         changeVal = change.next;
@@ -62,23 +63,27 @@ export function updateLabel(name, change, scrollDirection, district, container, 
         posX = parseFloat(district.attr('cx')) - radius;
         container.attr('text-anchor', 'end');
         if(changeVal > 0) {
-          districtText.html(name + '<tspan dy="1" class="change--pos">' + ' \u2191' + Math.abs(changeVal) + '</tspan>' + ' \u2014');
+          districtText.html(name + '<tspan dy="1" class="change--pos">' + ' \u2191' + '<tspan id=' + id + '></tspan></tspan>' + ' \u2014');
         } else if (changeVal < 0){
-          districtText.html(name + '<tspan dy="1" class="change--neg">' + ' \u2193' + Math.abs(changeVal) + '</tspan>' + ' \u2014');
+          districtText.html(name + '<tspan dy="1" class="change--neg">' + ' \u2193' + '<tspan id=' + id + '></tspan></tspan>' + ' \u2014');
         } else {
-          districtText.html(name + '<tspan dy="1" class="change">' + ' \u2192' + Math.abs(changeVal) + '</tspan>' + ' \u2014');
+          districtText.html(name + '<tspan dy="1" class="change">' + ' \u2192' + '<tspan id=' + id + '></tspan></tspan>' + ' \u2014');
         }
     } else {
         posX = parseFloat(district.attr('cx')) + radius;
         container.attr('text-anchor', 'start');
         if(changeVal > 0) {
-          districtText.html('\u2014 ' + name + '<tspan dy="1" class="change--pos">' + ' \u2191' + Math.abs(changeVal) + '</tspan>')
+          districtText.html('\u2014 ' + name + '<tspan dy="1" class="change--pos">' + ' \u2191' + '<tspan id=' + id + '></tspan></tspan>');
         } else if (changeVal < 0) {
-          districtText.html('\u2014 ' + name + '<tspan dy="1" class="change--neg">' + ' \u2193' + Math.abs(changeVal) + '</tspan>')
+          districtText.html('\u2014 ' + name + '<tspan dy="1" class="change--neg">' + ' \u2193' + '<tspan id=' + id + '></tspan></tspan>');
         } else {
-          districtText.html('\u2014 ' + name + '<tspan dy="1" class="change">' + ' \u2192' + Math.abs(changeVal) + '</tspan>')
+          districtText.html('\u2014 ' + name + '<tspan dy="1" class="change">' + ' \u2192' + '<tspan id=' + id + '></tspan></tspan>');
         }
     }
+
+    let item = d3.select('#' + id);
+    console.log(item);
+    item.transition().duration(time).tween('text', tweenText(item, changeVal, item.text()));
 
     let posY = parseFloat(district.attr('cy')) - 10;
 
@@ -92,7 +97,7 @@ export function updateLabel(name, change, scrollDirection, district, container, 
     }
     if(name.toLowerCase() === 'hochfeld') {
       posY += 7;
-      posX -= 6;
+      posX -= 2;
     }
 
     container.attr('x', posX).attr('y', posY);
@@ -123,11 +128,6 @@ export function updateCounter(name, students,time) {
 function tweenText(item, newValue, currentValue) {
     return function() {
         let i = d3.interpolateRound(currentValue, newValue);
-        if(currentValue > newValue) {
-            item.attr('fill', config.colors.down);
-        } else {
-            item.attr('fill', config.colors.up);
-        }
         return function(t) {
             item.text(i(t));
         };

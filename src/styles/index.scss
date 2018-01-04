@@ -91,7 +91,7 @@ body {
 svg.map-container {
   z-index: 10;
   position: fixed;
-  height: 90vh;
+  height: 95vh;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -45%);
@@ -122,9 +122,12 @@ svg.map-container {
 }
 
 .year {
-  //margin-left: 200px;
+  margin-left: 150px;
   font-weight: 800;
   font-size: 48px;
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%)
 }
 
 .navigation {
