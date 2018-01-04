@@ -8,7 +8,7 @@ export function hoverDistrict () {
     });
     $('#' + event.target.id).css({
       "stroke": "#212121",
-      "stroke-width": "2.5"
+      "stroke-width": "2"
     });
   })
   $('.scaleItem').mouseleave(function(event){
@@ -31,7 +31,7 @@ export function hoverLabel () {
     let district = event.target.id.replace('__label', '')
     $('#' + district).css({
       "stroke": "#212121",
-      "stroke-width": "2.5"
+      "stroke-width": "2"
     });
   })
   $('.label__js').mouseleave(function(event){

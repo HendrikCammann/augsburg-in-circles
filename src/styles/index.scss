@@ -91,16 +91,33 @@ body {
 svg.map-container {
   z-index: 10;
   position: fixed;
-  display: inline-block;
-  height: 80vh;
+  height: 90vh;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -45%);
+
+  .change {
+    fill: $black;
+    font-size: 12px;
+    font-weight: 600;
+
+    &--neg {
+      fill: red;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    &--pos {
+      fill: green;
+      font-size: 12px;
+      font-weight: 600;
+    }
+  }
 
   text {
-    font-size: 12px;
+    font-size: 10px;
     pointer-events: none;
-    font-weight: 500;
+    font-weight: 400;
   }
 }
 
@@ -121,12 +138,12 @@ svg.map-container {
 
 .legend {
     position: fixed;
-    width: 100%;
-    bottom: 30px;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
     text-align: center;
     color: black;
 }
-
 .district-list {
     position: fixed;
     top: 50%;
@@ -137,7 +154,7 @@ svg.map-container {
     z-index: 2130;
 
     li span {
-        cursor:pointer;
+        cursor: pointer;
         display: inline-block;
         padding: 2px 10px;
         margin: 3px 0;

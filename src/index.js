@@ -100,14 +100,13 @@ function outputYear(year_dataset) {
         let circle = d3.select('#' + year_dataset.districts[i].name.toLowerCase() + '_circle');
         let container = d3.select('#' + year_dataset.districts[i].name.toLowerCase() + '_container');
         let text = d3.select('#' + year_dataset.districts[i].name.toLowerCase() + '_text');
-        let change = d3.select('#' + year_dataset.districts[i].name.toLowerCase() + '_change');
         let district = d3.select('#' + year_dataset.districts[i].name.toLowerCase());
 
         let mapData = calculateMapData(year_dataset.districts[i].data.students, year_dataset.districts[i].data.residents, STUDENTS_FACTOR, RELATIVE_STUDENTS_FACTOR, P, MAX_PERCENTAGE, GRADIENT, PI, isAbsolute);
 
         updateCounter(year_dataset.districts[i].name.toLowerCase(), year_dataset.districts[i].data.students, TRANSITION_TIME);
         updatePositions(year_dataset.districts[i].name.toLowerCase(), isExploded, container, TRANSITION_TIME);
-        updateLabel(year_dataset.districts[i].name, year_dataset.districts[i].change, navigationUpwards, circle, container, text, change, mapData.radius, TRANSITION_TIME);
+        updateLabel(year_dataset.districts[i].name, year_dataset.districts[i].change, navigationUpwards, circle, container, text, mapData.radius, TRANSITION_TIME);
         updateColors(circle, district, mapData.color, year_dataset.districts[i].name.toLowerCase());
         updateSize(circle, mapData.radius, TRANSITION_TIME);
 

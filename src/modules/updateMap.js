@@ -33,8 +33,6 @@ export function updatePositions(name, isExploded, container, time) {
           morphSVG: {
             shape: '#' + name + '_fake'
           },
-          stroke: '#FFFFFF',
-          //fill: '#4CAF50',
           ease: Back.easeInOut
         })
         container.transition().attr('opacity', 0).duration(time/10);
@@ -43,7 +41,6 @@ export function updatePositions(name, isExploded, container, time) {
           morphSVG: {
             shape: '#' + name + '_circle'
           },
-          stroke: '#FFFFFF',
           ease: Back.easeInOut
         })
         container.transition().delay(500).attr('opacity', 1).duration(time);
@@ -51,7 +48,7 @@ export function updatePositions(name, isExploded, container, time) {
     }
 }
 
-export function updateLabel(name, change, scrollDirection, district, container, districtText, districtChange, radius, time) {
+export function updateLabel(name, change, scrollDirection, district, container, districtText, radius, time) {
     let posX;
     let changeVal;
 
@@ -62,20 +59,24 @@ export function updateLabel(name, change, scrollDirection, district, container, 
     }
 
     if(parseFloat(district.attr('cx')) < 265) {
-        posX = parseFloat(district.attr('cx')) - radius + 2;
+        posX = parseFloat(district.attr('cx')) - radius;
         container.attr('text-anchor', 'end');
         if(changeVal > 0) {
-          districtText.text(name + ' \u2191+' + changeVal + ' \u2014');
+          districtText.html(name + '<tspan dy="1" class="change--pos">' + ' \u2191' + Math.abs(changeVal) + '</tspan>' + ' \u2014');
+        } else if (changeVal < 0){
+          districtText.html(name + '<tspan dy="1" class="change--neg">' + ' \u2193' + Math.abs(changeVal) + '</tspan>' + ' \u2014');
         } else {
-          districtText.text(name + ' \u2193' + changeVal + ' \u2014');
+          districtText.html(name + '<tspan dy="1" class="change">' + ' \u2192' + Math.abs(changeVal) + '</tspan>' + ' \u2014');
         }
     } else {
-        posX = parseFloat(district.attr('cx')) + radius - 2;
+        posX = parseFloat(district.attr('cx')) + radius;
         container.attr('text-anchor', 'start');
-        if(changeVal >= 0) {
-          districtText.text('\u2014 ' + name + ' \u2191+' + changeVal);
+        if(changeVal > 0) {
+          districtText.html('\u2014 ' + name + '<tspan dy="1" class="change--pos">' + ' \u2191' + Math.abs(changeVal) + '</tspan>')
+        } else if (changeVal < 0) {
+          districtText.html('\u2014 ' + name + '<tspan dy="1" class="change--neg">' + ' \u2193' + Math.abs(changeVal) + '</tspan>')
         } else {
-          districtText.text('\u2014 ' + name + ' \u2193' + changeVal);
+          districtText.html('\u2014 ' + name + '<tspan dy="1" class="change">' + ' \u2192' + Math.abs(changeVal) + '</tspan>')
         }
     }
 
@@ -83,15 +84,15 @@ export function updateLabel(name, change, scrollDirection, district, container, 
 
     if(name.toLowerCase() === 'innenstadt') {
       posY += 20;
-      posY -= 5;
+      posX -= 6;
     }
     if(name.toLowerCase() === 'jakobervorstadt') {
       posY -= 10;
-      posY -= 5;
+      posX -= 3;
     }
-    if(name.toLowerCase() === 'univiertel') {
-      posX += 10;
-      posY += 20;
+    if(name.toLowerCase() === 'hochfeld') {
+      posY += 7;
+      posX -= 6;
     }
 
     container.attr('x', posX).attr('y', posY);
