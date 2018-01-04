@@ -1,30 +1,33 @@
 /* eslint-disable */
 import $ from "jquery";
 
-export function hoverCircle () {
-  $('.circle').mouseenter(function(event){
+export function hoverDistrict () {
+  $('.scaleItem').mouseenter(function(event){
+    $('#' + event.target.id + '__label').css({
+      'border-color': '#404040',
+    });
     $('#' + event.target.id).css({
       "stroke": "#212121",
-      "stroke-width": "1.5"
-    });
-    $('#' + event.target.id.replace('_circle', '')).css({
-      "fill": event.target.style.fill
+      "stroke-width": "2.5"
     });
   })
-  $('.circle').mouseleave(function(event){
-    $('#' + event.target.id).css({
-      "stroke": "#FFFFFF",
-      "stroke-width": "0"
+  $('.scaleItem').mouseleave(function(event){
+    $('#' + event.target.id + '__label').css({
+      'border-color': '#F2F2F2',
     });
-    $('#' + event.target.id.replace('_circle', '')).css({
-      "fill": "#212121"
+    $('#' + event.target.id).css({
+      "stroke": "#212121",
+      "stroke-width": "0"
     });
   })
 }
 
 export function hoverLabel () {
   $('.label__js').mouseenter(function(event){
-    console.log(event.target.id);
+    $('#' + event.target.id).css({
+      'border-color': '#404040',
+    });
+
     let district = event.target.id.replace('__label', '')
     $('#' + district).css({
       "stroke": "#212121",
@@ -32,8 +35,11 @@ export function hoverLabel () {
     });
   })
   $('.label__js').mouseleave(function(event){
-    let district = event.target.id.replace('__label', '')
+    $('#' + event.target.id).css({
+      'border-color': '#F2F2F2',
+    });
 
+    let district = event.target.id.replace('__label', '')
     $('#' + district).css({
       "stroke": "#FFFFFF",
       "stroke-width": "0"

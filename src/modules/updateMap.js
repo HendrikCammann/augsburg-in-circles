@@ -7,7 +7,7 @@ import MorphSVGPlugin from 'gsap/MorphSVGPlugin';
 export function updateColors(districtCircle, district, color, name) {
     districtCircle.style('fill', color);
     district.style('fill', color);
-    document.getElementById(name + '__label').style.color = "#" + color;
+    // document.getElementById(name + '__label').style.color = "#" + color;
 }
 
 export function updateSize(districtCircle, radius, time) {
@@ -93,7 +93,7 @@ export function updateCounter(name, students,time) {
     amount = students - 1000;
     amount = parseInt(amount / 100);
   } else {
-    largeCircle.transition().attr('opacity', "0").duration(time);
+    largeCircle.transition().attr('opacity', "0.1").duration(time);
     amount = parseInt(students / 100);
   }
 
@@ -102,7 +102,7 @@ export function updateCounter(name, students,time) {
     if(j < amount) {
       item.transition().attr('r', '10').attr('opacity', "1").attr('r', '4').duration(time);
     } else {
-      item.transition().attr('opacity', "0").duration(time);
+      item.transition().attr('opacity', "0.05").duration(time);
     }
   }
 }

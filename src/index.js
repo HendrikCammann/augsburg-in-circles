@@ -13,7 +13,7 @@ import fullpage from './vendor/jquery.fullpage.min.js';
 import createJson from './modules/createJson';
 import { updateColors, updateSize, updateText, updatePositions, updateLabel, updateCounter } from './modules/updateMap';
 import { calculateMapData } from './modules/calculator';
-import { hoverLabel } from './modules/hover';
+import { hoverLabel, hoverDistrict } from './modules/hover';
 import { drawChart, highlightChart, drawGraph, highlightGraph } from './modules/chart';
 
 import './styles/index.scss';
@@ -53,6 +53,11 @@ let activeYear;
 // FUNCTIONS
 function toggleAbsolute() {
   isAbsolute = !isAbsolute;
+  if(!isAbsolute) {
+    document.getElementById('toggle').innerHTML = 'is RELATIVE';
+  } else {
+    document.getElementById('toggle').innerHTML = 'is ABSOLUTE';
+  }
   outputYear(activeYear);
 }
 
@@ -76,10 +81,12 @@ function setupDataPackages() {
 function resetVisual(data) {
   for (let i = 0; i < data.districts.length; i++) {
       let item = d3.select('#' + data.districts[i].name.toLowerCase() + '_circle');
-      item.attr('opacity', 0);
+      item.attr('display', 'none');
       item.attr('r', RADIUS);
       let itemText = d3.select('#' + data.districts[i].name.toLowerCase() + '_text');
       itemText.attr('opacity', 0);
+      let itemFake = d3.select('#' + data.districts[i].name.toLowerCase() + '_fake');
+      itemFake.attr('display', 'none');
   }
 }
 
@@ -116,6 +123,7 @@ function buildFullPage() {
 
 // FILL IN CORRECT DATA
 function yearData(nextIndex) {
+  console.log(nextIndex)
 	switch(nextIndex) {
 		//2016
 		case 1:
@@ -162,16 +170,10 @@ $(document).ready(function(){
     document.getElementById("toggle").addEventListener("click", toggleAbsolute);
     document.getElementById("explode").addEventListener("click", toggleExploded);
 
-    /*$('.chart__bar').click(function(event) {
-      outputYear(datasetOutput[event.target.attributes.year.value], false);
-      highlightChart(event.target.attributes.year.value);
-    });*/
     setupDataPackages();
     resetVisual(datasetOutput[0]);
-    //setupMap();
     buildFullPage();
     yearData(1);
     hoverLabel();
-    //drawGraph(chartData, AUGSBURG_RESIDENTS);
-    // hoverCircle();
+    hoverDistrict();
 });
