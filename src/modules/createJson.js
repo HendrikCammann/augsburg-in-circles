@@ -29,6 +29,7 @@ export default function createJson() {
 	for (let i = 0; i < augsburg.data.length; i++) {
 		for (let j = 0; j < _districts.length; j++) {
 			augsburg.data[i].districts.push(_districts[j].data[i]);
+			augsburg.data[i].students += _districts[j].data[i].data.students;
 
 			if(_districts[j].data[i].data.residents > augsburg.maxVal.residents) {
 				augsburg.maxVal.residents = _districts[j].data[i].data.residents;

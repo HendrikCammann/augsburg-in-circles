@@ -101,6 +101,8 @@ function resetVisual(data) {
 function outputYear(year_dataset) {
     activeYear = year_dataset;
     document.getElementById('year').innerHTML = year_dataset.year;
+    let change = document.getElementById('total').innerHTML - year_dataset.students
+    document.getElementById('total').innerHTML = year_dataset.students + ' Studenten';
     for (let i = 0; i < year_dataset.districts.length; i++) {
         let circle = d3.select('#' + year_dataset.districts[i].name.toLowerCase() + '_circle');
         let container = d3.select('#' + year_dataset.districts[i].name.toLowerCase() + '_container');
