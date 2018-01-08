@@ -53,6 +53,7 @@ let chartData = [];
 let activeYear;
 
 let lastIndex = 0;
+let lastStudentCount = 0;
 
 // FUNCTIONS
 function toggleAbsolute() {
@@ -101,8 +102,15 @@ function resetVisual(data) {
 function outputYear(year_dataset) {
     activeYear = year_dataset;
     document.getElementById('year').innerHTML = year_dataset.year;
-    let change = document.getElementById('total').innerHTML - year_dataset.students
-    document.getElementById('total').innerHTML = year_dataset.students + ' Studenten';
+    if(year_dataset.students > lastStudentCount) {
+      document.getElementById('total').innerHTML = ' \u2191' + year_dataset.students + ' Studenten';
+      document.getElementById('total').style.color = 'green';
+    } else {
+      document.getElementById('total').innerHTML = ' \u2193' + year_dataset.students + ' Studenten';
+      document.getElementById('total').style.color = 'red';
+    }
+    lastStudentCount = year_dataset.students;
+
     for (let i = 0; i < year_dataset.districts.length; i++) {
         let circle = d3.select('#' + year_dataset.districts[i].name.toLowerCase() + '_circle');
         let container = d3.select('#' + year_dataset.districts[i].name.toLowerCase() + '_container');
