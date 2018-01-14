@@ -5,6 +5,26 @@
         <title>Augsburg. In Teilen. In Kreisen.</title>
     </head>
     <body>
+        <div id="overlay" class="overlay">
+            <div class="container">
+                <div class="overlay__item overlay__years">
+                    <p>Jahre</p>
+                    <p>Über die Punkte links am Rand kann zwischen verschiedenen Jahren gewechselt werden.</p>
+                </div>
+                <div class="overlay__item overlay__map">
+                    <p>Karte</p>
+                    <p>Die Farbe visualisiert die Studentendichte, die weißen Punkte die Gesamtzahl der Studierenden.</p>
+                </div>
+                <div class="overlay__item overlay__districts">
+                    <p>Stadtteile</p>
+                    <p>Durch die Auswahl eines Stadtteiles, wird dieser auf der Karte hervorgehoben.</p>
+                </div>
+                <div class="overlay__item overlay__view">
+                    <p>Ansicht</p>
+                    <p>Hier kann die Darstellung der Karte geändert werden.</p>
+                </div>
+            </div>
+        </div>
         <div class="container">
             <div class="row menu">
                 <div class="column column--half logo">
@@ -36,6 +56,7 @@
                 <div class="column column--half toggle column--right content--right">
                     <button id="toggle" class="button is-light" type="button">IS RELATIVE</button>
                     <button id="explode" class="button is-light" type="button">TOGGLE EXPLODE</button>
+                    <button id="help" class="button is-light" type="button">HELP</button>
                 </div>
             </div>
 

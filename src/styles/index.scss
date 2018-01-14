@@ -85,6 +85,108 @@ body {
     right: 0;
 }
 
+// Overlay
+.overlay {
+  display: none;
+  background-color: rgba(0, 0, 0, 0.5);;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: 9999;
+
+  .overlay__item {
+    position: fixed;
+    color: #fff;
+    font-size: 14px;
+    line-height: 20px;
+
+    :first-child {
+      font-weight: 800;
+      font-size: 16px;
+    }
+
+    &.overlay__years {
+      width: 230px;
+      margin-left: 335px;
+      top: 50%;
+      transform: translateY(-50%);
+
+      &:before {
+        content: '';
+        display: block;
+        width: 70px;
+        height: 15px;
+        background-image: url('../maps/arrow.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 40px;
+        left: -70px;
+      }
+    }
+
+    &.overlay__map {
+      width: 310px;
+      top: 38%;
+      right: 50%;
+      margin-right: -530px;
+
+      &:before {
+        content: '';
+        display: block;
+        width: 70px;
+        height: 15px;
+        background-image: url('../maps/arrow.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 40px;
+        left: -70px;
+      }
+    }
+
+    &.overlay__districts {
+      width: 310px;
+      top: 55%;
+      right: 280px;
+      text-align: right;
+
+      &:before {
+        content: '';
+        display: block;
+        width: 70px;
+        height: 15px;
+        background-image: url('../maps/arrow_right.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 30px;
+        right: -80px;
+      }
+    }
+
+    &.overlay__view {
+      width: 200px;
+      top: 30px;
+      right: 550px;
+      text-align: right;
+
+      &:before {
+        content: '';
+        display: block;
+        width: 70px;
+        height: 15px;
+        background-image: url('../maps/arrow_right.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 25px;
+        right: -85px;
+      }
+    }
+  }
+}
+
 // MAP
 svg.map-container {
   z-index: 10;
