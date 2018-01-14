@@ -59,11 +59,9 @@ body {
 .logo {
     #{&}__icon {
         display: inline-block;
-        background-image: url('../maps/logo.svg');
         height: 46px;
         width: 35px;
         margin-right: 10px;
-        background-repeat: no-repeat;
     }
     #{&}__text {
         transform: translate(0, -1px);
@@ -94,7 +92,7 @@ svg.map-container {
   height: 100vh;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -45%);
+  transform: translate(-50%, -48%);
 
   .change {
     fill: $black;
@@ -160,7 +158,7 @@ svg.map-container {
 
 .legend {
     position: fixed;
-    bottom: 80px;
+    bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
     text-align: center;

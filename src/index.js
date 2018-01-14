@@ -103,10 +103,10 @@ function outputYear(year_dataset) {
     activeYear = year_dataset;
     document.getElementById('year').innerHTML = year_dataset.year;
     if(year_dataset.students > lastStudentCount) {
-      document.getElementById('total').innerHTML = ' \u2191' + year_dataset.students + ' Studenten';
+      document.getElementById('total').innerHTML = ' \u2191' + year_dataset.students + ' Studierende';
       document.getElementById('total').style.color = 'green';
     } else {
-      document.getElementById('total').innerHTML = ' \u2193' + year_dataset.students + ' Studenten';
+      document.getElementById('total').innerHTML = ' \u2193' + year_dataset.students + ' Studierende';
       document.getElementById('total').style.color = 'red';
     }
     lastStudentCount = year_dataset.students;
@@ -150,11 +150,11 @@ function setupLegend(isAbsolute) {
     colorStop += 0.05;
   }
   if(isAbsolute) {
-    dots.innerHTML = dots.innerHTML.replace(DATASET.maxVal.relativeStudents.toFixed(2) * 100 + ' Studenten/ 100 Einwohner', '');
-    dots.innerHTML += DATASET.maxVal.students + ' Studenten';
+    dots.innerHTML = dots.innerHTML.replace(DATASET.maxVal.relativeStudents.toFixed(2) * 100 + ' Studierende je 100 Einwohner', '');
+    dots.innerHTML += DATASET.maxVal.students + ' Studierende';
   } else {
-    dots.innerHTML = dots.innerHTML.replace(DATASET.maxVal.students + ' Studenten', '');
-    dots.innerHTML += DATASET.maxVal.relativeStudents.toFixed(2) * 100 + ' Studenten/ 100 Einwohner';
+    dots.innerHTML = dots.innerHTML.replace(DATASET.maxVal.students + ' Studierende', '');
+    dots.innerHTML += DATASET.maxVal.relativeStudents.toFixed(2) * 100 + ' Studierende je 100 Einwohner';
   }
 }
 
