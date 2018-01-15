@@ -72,7 +72,7 @@ export function updateLabel(name, change, scrollDirection, district, container, 
         posX = parseFloat(district.attr('cx')) - radius;
         container.attr('text-anchor', 'end');
         if(changeVal > 0) {
-          districtText.html(name + '<tspan dy="1" class="change--pos">' + ' \u2191' + '<tspan id=' + id + '></tspan></tspan>' + ' \u2014');
+          districtText.html(name + '<tspan dy="1" class="change--pos">' + ' \u2191+' + '<tspan id=' + id + '></tspan></tspan>' + ' \u2014');
         } else if (changeVal < 0){
           districtText.html(name + '<tspan dy="1" class="change--neg">' + ' \u2193' + '<tspan id=' + id + '></tspan></tspan>' + ' \u2014');
         } else {

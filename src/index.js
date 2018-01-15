@@ -52,6 +52,7 @@ let navigationUpwards = false;
 let datasetOutput = [];
 let chartData = [];
 let activeYear;
+let lastYear = null;
 
 let lastIndex = 0;
 let lastStudentCount = 0;
@@ -60,11 +61,11 @@ let lastStudentCount = 0;
 function toggleAbsolute() {
   isAbsolute = !isAbsolute;
   if(!isAbsolute) {
-    document.getElementById('toggle').innerHTML = 'is RELATIVE';
+    document.getElementById('toggle').innerHTML = 'RELATIV';
   } else {
-    document.getElementById('toggle').innerHTML = 'is ABSOLUTE';
+    document.getElementById('toggle').innerHTML = 'ABSOLUT';
   }
-  setupLegend(isAbsolute);
+  setupLegend(isAbsolute, isExploded);
   outputYear(activeYear);
 }
 
@@ -73,6 +74,7 @@ function toggleExploded() {
   $('.district-list').toggle( "slow", function() {
     // Animation complete.
   });
+  setupLegend(isAbsolute, isExploded);
   outputYear(activeYear);
 }
 
@@ -112,18 +114,27 @@ function resetVisual(data) {
 function outputYear(year_dataset) {
     activeYear = year_dataset;
     document.getElementById('year').innerHTML = year_dataset.year;
+    document.getElementById('count').innerHTML = year_dataset.students + ' ' + GENDER;
+
     if(year_dataset.students > lastStudentCount) {
-      document.getElementById('total').innerHTML = ' \u2191' + (year_dataset.students - lastStudentCount) + ' ' + GENDER;
+      document.getElementById('total').innerHTML = ' \u2191+' + (year_dataset.students - lastStudentCount) + ' ' + GENDER;
       document.getElementById('total').style.color = 'green';
     } else {
       document.getElementById('total').innerHTML = ' \u2193' + (year_dataset.students - lastStudentCount) + ' ' + GENDER;
       document.getElementById('total').style.color = 'red';
     }
     if(lastStudentCount == 0) {
-      document.getElementById('total').innerHTML = (year_dataset.students - lastStudentCount) + ' ' + GENDER;
+      //document.getElementById('total').innerHTML = (year_dataset.students - lastStudentCount) + ' ' + GENDER;
+      document.getElementById('total').innerHTML = '';
       document.getElementById('total').style.color = '#4D4D4D';
     }
+
+    if(lastYear !== null) {
+      document.getElementById('total').innerHTML += ' (zu ' + lastYear + ')';
+    }
+
     lastStudentCount = year_dataset.students;
+    lastYear = year_dataset.year;
 
     for (let i = 0; i < year_dataset.districts.length; i++) {
         let circle = d3.select('#' + year_dataset.districts[i].name.toLowerCase() + '_circle');
@@ -149,12 +160,20 @@ function checkScrollDirection(actual, last) {
     }
 }
 
-function setupLegend(isAbsolute) {
+function setupLegend(isAbsolute, isExploded) {
   let dots = document.getElementById('colors');
+  let headline = document.getElementById('legend__headline');
+  let value = document.getElementById('legend__value');
+  let explanation = document.getElementById('explanation');
+  let explanation__headline = document.getElementById('explanation__headline');
+
+
   let colorStop = 0;
   let color;
 
-  for (let i = 0; i < dots.children.length; i++) {
+  explanation__headline.innerHTML = ('Gesamtzahl an ' + GENDER + 'n');
+
+  for (let i = 0; i < dots.children.length - 1; i++) {
     if(colorStop >= GRADIENT.colorstop) {
       color = pickGradientColor(GRADIENT.start, GRADIENT.mid, colorStop);
     } else {
@@ -163,12 +182,19 @@ function setupLegend(isAbsolute) {
     dots.children[i].style.backgroundColor = '#' + color;
     colorStop += 0.05;
   }
-  if(isAbsolute) {
-    dots.innerHTML = dots.innerHTML.replace(DATASET.maxVal.relativeStudents.toFixed(2) * 100 + ' ' + GENDER + ' pro 100 Einwohner', '');
-    dots.innerHTML += DATASET.maxVal.students + ' ' +  GENDER;
+
+  if(isExploded) {
+    explanation.style.display = "none";
   } else {
-    dots.innerHTML = dots.innerHTML.replace(DATASET.maxVal.students + ' ' +  GENDER, '');
-    dots.innerHTML += DATASET.maxVal.relativeStudents.toFixed(2) * 100 + ' ' + GENDER + ' pro 100 Einwohner';
+    explanation.style.display = "inline-block";
+  }
+
+  if(isAbsolute) {
+    value.innerHTML = DATASET.maxVal.students;
+    headline.innerHTML = GENDER;
+  } else {
+    value.innerHTML = DATASET.maxVal.relativeStudents.toFixed(2) * 100;
+    headline.innerHTML = GENDER + ' pro 100 Einwohner';
   }
 }
 
@@ -234,7 +260,7 @@ $(document).ready(function() {
     document.getElementById("help").addEventListener("click", toggleOverview);
     document.getElementById("overlay").addEventListener("click", toggleOverview);
 
-    setupLegend(isAbsolute);
+    setupLegend(isAbsolute, isExploded);
     setupDataPackages();
     resetVisual(datasetOutput[0]);
     buildFullPage();

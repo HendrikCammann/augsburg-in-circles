@@ -239,6 +239,15 @@ svg.map-container {
   transform: translateY(100%);
 }
 
+.count {
+  margin-left: 150px;
+  font-weight: 400;
+  font-size: 14px;
+  position: fixed;
+  top: 50%;
+  transform: translateY(-200%);
+}
+
 .navigation {
     //text-align: right;
     #{&}__button {
@@ -258,24 +267,60 @@ svg.map-container {
 
 }
 
-.legend {
-    position: fixed;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    color: black;
-}
+.wrapper {
+  position: fixed;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: black;
 
-.colors {
-  &__dot {
-    width: 10px;
-    height: 10px;
-    display: inline-block;
-    background: red;
-    border-radius: 50%;
+  .legend {
+      display: inline-block;
+
+      &__headline {
+        text-align: left;
+        font-size: 12px;
+        color: $dark_gray;
+      }
+  }
+
+  .colors {
+    &__dot {
+      width: 10px;
+      height: 10px;
+      display: inline-block;
+      background: red;
+      border-radius: 50%;
+    }
+  }
+
+  .explanation {
+      margin-left: 20px;
+      display: inline-block;
+      text-align: left;
+
+      .circle {
+        width: 5px;
+        height: 5px;
+        display: inline-block;
+        background: $black;
+        border-radius: 50%;
+
+        &--large {
+          height: 10px;
+          width: 10px;
+        }
+      }
+
+      &__headline {
+        text-align: left;
+        font-size: 12px;
+        color: $dark_gray;
+      }
   }
 }
+
 
 .district-list {
     position: fixed;
