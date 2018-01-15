@@ -1,4 +1,5 @@
 {
+  "gender": "Studierende",
   "maxPercentage": 100,
   "transitions": {
     "time": 1000

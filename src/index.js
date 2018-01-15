@@ -29,6 +29,7 @@ const MAX_PERCENTAGE = config.maxPercentage
 const POPULATION_FACTOR = MAX_PERCENTAGE / POPULATION;
 const STUDENTS_FACTOR = MAX_PERCENTAGE / STUDENTS;
 const RELATIVE_STUDENTS_FACTOR = MAX_PERCENTAGE / RELATIVE_STUDENTS;
+const GENDER = config.gender;
 
 // CIRCLE VARIABLES
 const GRADIENT = config.gradient;
@@ -112,11 +113,15 @@ function outputYear(year_dataset) {
     activeYear = year_dataset;
     document.getElementById('year').innerHTML = year_dataset.year;
     if(year_dataset.students > lastStudentCount) {
-      document.getElementById('total').innerHTML = ' \u2191' + year_dataset.students + ' Studierende';
+      document.getElementById('total').innerHTML = ' \u2191' + (year_dataset.students - lastStudentCount) + ' ' + GENDER;
       document.getElementById('total').style.color = 'green';
     } else {
-      document.getElementById('total').innerHTML = ' \u2193' + year_dataset.students + ' Studierende';
+      document.getElementById('total').innerHTML = ' \u2193' + (year_dataset.students - lastStudentCount) + ' ' + GENDER;
       document.getElementById('total').style.color = 'red';
+    }
+    if(lastStudentCount == 0) {
+      document.getElementById('total').innerHTML = (year_dataset.students - lastStudentCount) + ' ' + GENDER;
+      document.getElementById('total').style.color = '#4D4D4D';
     }
     lastStudentCount = year_dataset.students;
 
@@ -159,11 +164,11 @@ function setupLegend(isAbsolute) {
     colorStop += 0.05;
   }
   if(isAbsolute) {
-    dots.innerHTML = dots.innerHTML.replace(DATASET.maxVal.relativeStudents.toFixed(2) * 100 + ' Studierende je 100 Einwohner', '');
-    dots.innerHTML += DATASET.maxVal.students + ' Studierende';
+    dots.innerHTML = dots.innerHTML.replace(DATASET.maxVal.relativeStudents.toFixed(2) * 100 + ' ' + GENDER + ' pro 100 Einwohner', '');
+    dots.innerHTML += DATASET.maxVal.students + ' ' +  GENDER;
   } else {
-    dots.innerHTML = dots.innerHTML.replace(DATASET.maxVal.students + ' Studierende', '');
-    dots.innerHTML += DATASET.maxVal.relativeStudents.toFixed(2) * 100 + ' Studierende je 100 Einwohner';
+    dots.innerHTML = dots.innerHTML.replace(DATASET.maxVal.students + ' ' +  GENDER, '');
+    dots.innerHTML += DATASET.maxVal.relativeStudents.toFixed(2) * 100 + ' ' + GENDER + ' pro 100 Einwohner';
   }
 }
 
@@ -224,7 +229,6 @@ function yearData(nextIndex) {
 
 // RUNNING CODE
 $(document).ready(function() {
-    console.log(DATASET);
     document.getElementById("toggle").addEventListener("click", toggleAbsolute);
     document.getElementById("explode").addEventListener("click", toggleExploded);
     document.getElementById("help").addEventListener("click", toggleOverview);
