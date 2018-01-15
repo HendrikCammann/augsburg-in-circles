@@ -76,6 +76,15 @@ function toggleExploded() {
   outputYear(activeYear);
 }
 
+function toggleOverview() {
+  var overlay = document.getElementById('overlay');
+  if (overlay.style.display === 'block') {
+    overlay.style.display = 'none';
+  } else {
+    overlay.style.display = 'block';
+  }
+}
+
 function setupDataPackages() {
     for (let i = 0; i < DATASET.data.length; i++) {
         datasetOutput.push(DATASET.data[i]);
@@ -222,6 +231,8 @@ function yearData(nextIndex) {
 $(document).ready(function() {
     document.getElementById("toggle").addEventListener("click", toggleAbsolute);
     document.getElementById("explode").addEventListener("click", toggleExploded);
+    document.getElementById("help").addEventListener("click", toggleOverview);
+    document.getElementById("overlay").addEventListener("click", toggleOverview);
 
     setupLegend(isAbsolute);
     setupDataPackages();
