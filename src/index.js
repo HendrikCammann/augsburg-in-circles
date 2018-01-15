@@ -85,6 +85,19 @@ function toggleOverview() {
   } else {
     overlay.style.display = 'block';
   }
+  setupOverview(isExploded);
+}
+
+function setupOverview(isExploded) {
+  if (isExploded) {
+    document.getElementById('overlay__map').style.display = 'none';
+    document.getElementById('overlay__map--exploded').style.display = 'block';
+    document.getElementById('overlay__districts').style.display = 'none';
+  } else {
+    document.getElementById('overlay__map').style.display = 'block';
+    document.getElementById('overlay__map--exploded').style.display = 'none';
+    document.getElementById('overlay__districts').style.display = 'block';
+  }
 }
 
 function setupDataPackages() {

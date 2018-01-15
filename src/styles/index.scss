@@ -126,10 +126,30 @@ body {
     }
 
     &.overlay__map {
-      width: 310px;
+      width: 290px;
       top: 38%;
       right: 50%;
-      margin-right: -530px;
+      margin-right: -520px;
+
+      &:before {
+        content: '';
+        display: block;
+        width: 70px;
+        height: 15px;
+        background-image: url('../maps/arrow.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 40px;
+        left: -70px;
+      }
+    }
+
+    &.overlay__map--exploded {
+      width: 290px;
+      top: 46%;
+      right: 50%;
+      margin-right: -630px;
 
       &:before {
         content: '';
