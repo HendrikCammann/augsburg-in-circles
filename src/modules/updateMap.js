@@ -5,7 +5,9 @@ import { TweenMax, TweenLite, Power2, TimelineLite } from "gsap";
 import MorphSVGPlugin from '../vendor/MorphSVGPlugin';
 
 export function updateColors(districtCircle, district, color, name) {
-    districtCircle.style('fill', color);
+    console.log(color);
+    document.getElementById(name).setAttribute("fill", '#' + color);
+    //districtCircle.style('fill', color);
     district.style('fill', color);
 }
 

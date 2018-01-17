@@ -13,7 +13,7 @@ import fullpage from './vendor/jquery.fullpage.min.js';
 import createJson from './modules/createJson';
 import { updateColors, updateSize, updateText, updatePositions, updateLabel, updateCounter } from './modules/updateMap';
 import { calculateMapData } from './modules/calculator';
-import { hoverLabel, hoverDistrict } from './modules/hover';
+import { hoverLabel, hoverDistrict, onClick } from './modules/hover';
 import pickGradientColor from './modules/pickGradientColor';
 import { drawChart, highlightChart, drawGraph, highlightGraph } from './modules/chart';
 
@@ -117,20 +117,22 @@ function outputYear(year_dataset) {
     document.getElementById('count').innerHTML = year_dataset.students + ' ' + GENDER;
 
     if(year_dataset.students > lastStudentCount) {
-      document.getElementById('total').innerHTML = ' \u2191+' + (year_dataset.students - lastStudentCount) + ' ' + GENDER;
+      document.getElementById('total').innerHTML = ' \u2191' + Math.abs((year_dataset.students - lastStudentCount)) + ' ' + GENDER;
       document.getElementById('total').style.color = 'green';
+      if(lastYear !== null) {
+        document.getElementById('total').innerHTML += ' mehr als ' + lastYear
+      }
     } else {
-      document.getElementById('total').innerHTML = ' \u2193' + (year_dataset.students - lastStudentCount) + ' ' + GENDER;
+      document.getElementById('total').innerHTML = ' \u2193' + Math.abs((year_dataset.students - lastStudentCount)) + ' ' + GENDER;
       document.getElementById('total').style.color = 'red';
+      if(lastYear !== null) {
+        document.getElementById('total').innerHTML += ' weniger als ' + lastYear
+      }
     }
     if(lastStudentCount == 0) {
       //document.getElementById('total').innerHTML = (year_dataset.students - lastStudentCount) + ' ' + GENDER;
       document.getElementById('total').innerHTML = '';
       document.getElementById('total').style.color = '#4D4D4D';
-    }
-
-    if(lastYear !== null) {
-      document.getElementById('total').innerHTML += ' (zu ' + lastYear + ')';
     }
 
     lastStudentCount = year_dataset.students;
@@ -267,4 +269,5 @@ $(document).ready(function() {
     yearData(1);
     hoverLabel();
     hoverDistrict();
+    onClick();
 });
