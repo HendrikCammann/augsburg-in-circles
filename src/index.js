@@ -53,6 +53,7 @@ let datasetOutput = [];
 let chartData = [];
 let activeYear;
 let lastYear = null;
+let saveLegend = null;
 
 let lastIndex = 0;
 let lastStudentCount = 0;
@@ -173,7 +174,10 @@ function setupLegend(isAbsolute, isExploded) {
   let colorStop = 0;
   let color;
 
-  explanation__headline.innerHTML = ('Gesamtzahl an ' + GENDER + 'n');
+  //explanation__headline.innerHTML = ('Gesamtzahl an ' + GENDER + 'n');
+  if(saveLegend === null) {
+    saveLegend = explanation.innerHTML;
+  }
 
   for (let i = 0; i < dots.children.length - 1; i++) {
     if(colorStop >= GRADIENT.colorstop) {
@@ -185,11 +189,13 @@ function setupLegend(isAbsolute, isExploded) {
     colorStop += 0.05;
   }
 
+  /*
   if(isExploded) {
     explanation.style.display = "none";
   } else {
     explanation.style.display = "inline-block";
   }
+  */
 
   if(isAbsolute) {
     value.innerHTML = DATASET.maxVal.students;
@@ -197,6 +203,14 @@ function setupLegend(isAbsolute, isExploded) {
   } else {
     value.innerHTML = DATASET.maxVal.relativeStudents.toFixed(2) * 100;
     headline.innerHTML = GENDER + ' pro 100 Einwohner';
+  }
+
+  if(isExploded) {
+    explanation.innerHTML = ('je größer desto mehr ' + GENDER);
+    explanation__headline.innerHTML = 'Kreisgröße';
+  } else {
+    explanation__headline.innerHTML = '';
+    explanation.innerHTML = saveLegend;
   }
 }
 

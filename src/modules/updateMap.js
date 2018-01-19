@@ -5,7 +5,6 @@ import { TweenMax, TweenLite, Power2, TimelineLite } from "gsap";
 import MorphSVGPlugin from '../vendor/MorphSVGPlugin';
 
 export function updateColors(districtCircle, district, color, name) {
-    console.log(color);
     document.getElementById(name).setAttribute("fill", '#' + color);
     //districtCircle.style('fill', color);
     district.style('fill', color);
@@ -63,7 +62,6 @@ export function updateLabel(name, change, scrollDirection, district, container, 
     } catch(err) {
 
     }
-
     if(scrollDirection) {
         changeVal = change.next;
     } else {
@@ -74,7 +72,7 @@ export function updateLabel(name, change, scrollDirection, district, container, 
         posX = parseFloat(district.attr('cx')) - radius;
         container.attr('text-anchor', 'end');
         if(changeVal > 0) {
-          districtText.html(name + '<tspan dy="1" class="change--pos">' + ' \u2191+' + '<tspan id=' + id + '></tspan></tspan>' + ' \u2014');
+          districtText.html(name + '<tspan dy="1" class="change--pos">' + ' \u2191' + '<tspan id=' + id + '></tspan></tspan>' + ' \u2014');
         } else if (changeVal < 0){
           districtText.html(name + '<tspan dy="1" class="change--neg">' + ' \u2193' + '<tspan id=' + id + '></tspan></tspan>' + ' \u2014');
         } else {
@@ -140,6 +138,9 @@ function tweenText(item, newValue, currentValue) {
         let i = d3.interpolateRound(currentValue, newValue);
         return function(t) {
             item.text(i(t));
+            /*if(item.text() < 0) {
+              item.text(Math.abs(item.text()));
+            }*/
         };
     }
 }
