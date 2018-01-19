@@ -13,6 +13,11 @@ body {
   background-color: #F2F2F2;
 }
 
+#help, #impressum__button {
+  font-size: 14px;
+  padding-top: 7px;
+}
+
 @mixin clearfix() {
   :before, :after {
     content: "";
@@ -83,6 +88,39 @@ body {
     z-index: 1000;
     position: absolute;
     right: 0;
+}
+
+.impressum {
+  display: none;
+  background-color: rgba(0, 0, 0, 0.85);
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: 9999;
+  padding: 200px;
+
+  #{&}__headline {
+    color: white;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 40px;
+  }
+
+  #{&}__subheadline {
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 5px;
+  }
+
+  #{&}__text {
+    color: white;
+    font-size: 14px;
+  }
+
+  #{&}__item {
+    margin-bottom: 25px;
+  }
 }
 
 // Overlay
@@ -424,7 +462,7 @@ $breakpoint-tablet: 480px;
     #toggle, #explode, #help {
       display: inline-block;
     }
-    #help {
+    #help, #impressum__button {
       display: none;
     }
   }

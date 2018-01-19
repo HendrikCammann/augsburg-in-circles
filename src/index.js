@@ -88,6 +88,15 @@ function toggleOverview() {
   }
 }
 
+function toggleImpressum() {
+  var overlay = document.getElementById('impressum');
+  if (overlay.style.display === 'block') {
+    overlay.style.display = 'none';
+  } else {
+    overlay.style.display = 'block';
+  }
+}
+
 function setupDataPackages() {
     for (let i = 0; i < DATASET.data.length; i++) {
         datasetOutput.push(DATASET.data[i]);
@@ -273,6 +282,9 @@ $(document).ready(function() {
     document.getElementById("explode").addEventListener("click", toggleExploded);
     document.getElementById("help").addEventListener("click", toggleOverview);
     document.getElementById("overlay").addEventListener("click", toggleOverview);
+    document.getElementById("impressum").addEventListener("click", toggleImpressum);
+    document.getElementById("impressum__button").addEventListener("click", toggleImpressum);
+
 
     setupLegend(isAbsolute, isExploded);
     setupDataPackages();
