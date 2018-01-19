@@ -174,7 +174,7 @@ function setupLegend(isAbsolute, isExploded) {
   let colorStop = 0;
   let color;
 
-  //explanation__headline.innerHTML = ('Gesamtzahl an ' + GENDER + 'n');
+  explanation__headline.innerHTML = ('Gesamtzahl an ' + GENDER + 'n');
   if(saveLegend === null) {
     saveLegend = explanation.innerHTML;
   }
@@ -206,10 +206,8 @@ function setupLegend(isAbsolute, isExploded) {
   }
 
   if(isExploded) {
-    explanation.innerHTML = ('je größer desto mehr ' + GENDER);
-    explanation__headline.innerHTML = 'Kreisgröße';
+    explanation.innerHTML = ('je größer der Kreis desto mehr ' + GENDER);
   } else {
-    explanation__headline.innerHTML = '';
     explanation.innerHTML = saveLegend;
   }
 }
