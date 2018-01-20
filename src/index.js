@@ -13,7 +13,7 @@ import fullpage from './vendor/jquery.fullpage.min.js';
 import createJson from './modules/createJson';
 import { updateColors, updateSize, updateText, updatePositions, updateLabel, updateCounter } from './modules/updateMap';
 import { calculateMapData } from './modules/calculator';
-import { hoverLabel, hoverDistrict } from './modules/hover';
+import { hoverLabel, hoverDistrict, onClick } from './modules/hover';
 import pickGradientColor from './modules/pickGradientColor';
 import { drawChart, highlightChart, drawGraph, highlightGraph } from './modules/chart';
 
@@ -53,6 +53,7 @@ let datasetOutput = [];
 let chartData = [];
 let activeYear;
 let lastYear = null;
+let saveLegend = null;
 
 let lastIndex = 0;
 let lastStudentCount = 0;
@@ -100,6 +101,15 @@ function setupOverview(isExploded) {
   }
 }
 
+function toggleImpressum() {
+  var overlay = document.getElementById('impressum');
+  if (overlay.style.display === 'block') {
+    overlay.style.display = 'none';
+  } else {
+    overlay.style.display = 'block';
+  }
+}
+
 function setupDataPackages() {
     for (let i = 0; i < DATASET.data.length; i++) {
         datasetOutput.push(DATASET.data[i]);
@@ -130,20 +140,22 @@ function outputYear(year_dataset) {
     document.getElementById('count').innerHTML = year_dataset.students + ' ' + GENDER;
 
     if(year_dataset.students > lastStudentCount) {
-      document.getElementById('total').innerHTML = ' \u2191+' + (year_dataset.students - lastStudentCount) + ' ' + GENDER;
+      document.getElementById('total').innerHTML = ' \u2191' + Math.abs((year_dataset.students - lastStudentCount)) + ' ' + GENDER;
       document.getElementById('total').style.color = 'green';
+      if(lastYear !== null) {
+        document.getElementById('total').innerHTML += ' mehr als ' + lastYear
+      }
     } else {
-      document.getElementById('total').innerHTML = ' \u2193' + (year_dataset.students - lastStudentCount) + ' ' + GENDER;
+      document.getElementById('total').innerHTML = ' \u2193' + Math.abs((year_dataset.students - lastStudentCount)) + ' ' + GENDER;
       document.getElementById('total').style.color = 'red';
+      if(lastYear !== null) {
+        document.getElementById('total').innerHTML += ' weniger als ' + lastYear
+      }
     }
     if(lastStudentCount == 0) {
       //document.getElementById('total').innerHTML = (year_dataset.students - lastStudentCount) + ' ' + GENDER;
       document.getElementById('total').innerHTML = '';
       document.getElementById('total').style.color = '#4D4D4D';
-    }
-
-    if(lastYear !== null) {
-      document.getElementById('total').innerHTML += ' (zu ' + lastYear + ')';
     }
 
     lastStudentCount = year_dataset.students;
@@ -185,6 +197,9 @@ function setupLegend(isAbsolute, isExploded) {
   let color;
 
   explanation__headline.innerHTML = ('Gesamtzahl an ' + GENDER + 'n');
+  if(saveLegend === null) {
+    saveLegend = explanation.innerHTML;
+  }
 
   for (let i = 0; i < dots.children.length - 1; i++) {
     if(colorStop >= GRADIENT.colorstop) {
@@ -196,11 +211,13 @@ function setupLegend(isAbsolute, isExploded) {
     colorStop += 0.05;
   }
 
+  /*
   if(isExploded) {
     explanation.style.display = "none";
   } else {
     explanation.style.display = "inline-block";
   }
+  */
 
   if(isAbsolute) {
     value.innerHTML = DATASET.maxVal.students;
@@ -208,6 +225,12 @@ function setupLegend(isAbsolute, isExploded) {
   } else {
     value.innerHTML = DATASET.maxVal.relativeStudents.toFixed(2) * 100;
     headline.innerHTML = GENDER + ' pro 100 Einwohner';
+  }
+
+  if(isExploded) {
+    explanation.innerHTML = ('je größer der Kreis desto mehr ' + GENDER);
+  } else {
+    explanation.innerHTML = saveLegend;
   }
 }
 
@@ -272,6 +295,9 @@ $(document).ready(function() {
     document.getElementById("explode").addEventListener("click", toggleExploded);
     document.getElementById("help").addEventListener("click", toggleOverview);
     document.getElementById("overlay").addEventListener("click", toggleOverview);
+    document.getElementById("impressum").addEventListener("click", toggleImpressum);
+    document.getElementById("impressum__button").addEventListener("click", toggleImpressum);
+
 
     setupLegend(isAbsolute, isExploded);
     setupDataPackages();
@@ -280,4 +306,5 @@ $(document).ready(function() {
     yearData(1);
     hoverLabel();
     hoverDistrict();
+    onClick();
 });

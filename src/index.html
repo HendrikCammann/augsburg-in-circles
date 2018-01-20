@@ -5,6 +5,49 @@
         <title>Augsburg. In Teilen. In Kreisen.</title>
     </head>
     <body>
+        <div id="impressum" class="impressum">
+          <div class="impressum__headline">
+            Impressum & Datenquellen
+          </div>
+          <div class="impressum__item">
+              <div class="impressum__subheadline">
+                Herausgeber
+              </div>
+              <div class="impressum__text">
+                Hendrik Cammann <br>
+                Julian Föst <br>
+                Robin Spielmann
+              </div>
+          </div>
+          <div class="impressum__item">
+              <div class="impressum__subheadline">
+                Datenquellen
+              </div>
+              <div class="impressum__text">
+                Die der Visualisierung zugrunde liegenden Daten wurden von der <a href="http://www.augsburg.de/buergerservice-rathaus/rathaus/statistik-stadtforschung/" target="_blank">Stadtforschung Stadt Augsburg</a> erfasst.
+                Die Daten sind über den <a href="http://www.augsburg.de/buergerservice-rathaus/rathaus/statistik-stadtforschung/veroeffentlichungen/" target="blank">Strukturatlas</a> der Stadt Augsburg einsehbar und für alle Benutzer frei zugänglich.
+                Die Veröffentlichung der studentischen Einwohnerzahlen ist erst seit 2015 im <a href="http://www.augsburg.de/buergerservice-rathaus/rathaus/statistik-stadtforschung/veroeffentlichungen/" target="blank">Strukturatlas</a> für
+                alle Benutzer einsehbar. Diese Daten der Jahre 2012 - 2014 wurden uns von der <a href="http://www.augsburg.de/buergerservice-rathaus/rathaus/statistik-stadtforschung/" target="_blank">Stadtforschung Stadt Augsburg</a> persönlich zur Verfüfung und Veröffentlichung
+                freigeben und zur Verfügung gestellt.
+              </div>
+          </div>
+          <div class="impressum__item">
+              <div class="impressum__subheadline">
+                Copyright
+              </div>
+              <div class="impressum__text">
+                Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.
+              </div>
+          </div>
+          <div class="impressum__item">
+              <div class="impressum__subheadline">
+                Verantwortlichkeit
+              </div>
+              <div class="impressum__text">
+                Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.
+              </div>
+          </div>
+        </div>
         <div id="overlay" class="overlay">
             <div class="container">
                 <div class="overlay__item overlay__years">
@@ -58,9 +101,10 @@
                       </div>
                 </div>
                 <div class="column column--half toggle column--right content--right">
-                    <button id="toggle" class="button is-light" type="button">RELATIV</button>
-                    <button id="explode" class="button is-light" type="button">EXPLODE</button>
-                    <button id="help" class="button is-light" type="button">HILFE</button>
+                    <button id="toggle" class="button" type="button">RELATIV</button>
+                    <button id="explode" class="button" type="button">EXPLODE</button>
+                    <button id="help" class="button is-light" type="button">Hilfe</button>
+                    <button id="impressum__button" class="button is-light" type="button">Impressum</button>
                 </div>
             </div>
 
@@ -596,13 +640,13 @@
                   </span>
                 </div>
               </div>
-              <div class="explanation" id="explanation">
+              <div class="explanation">
                 <div class="explanation__headline" id="explanation__headline">
                 </div>
-                <div>
+                <div id="explanation">
                   <div class="circle circle--large">
                   </div>
-                  <span>
+                  <span style="margin-right: 5px">
                     1000
                   </span>
 

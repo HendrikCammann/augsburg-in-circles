@@ -46,3 +46,11 @@ export function hoverLabel () {
     })
   })
 }
+
+export function onClick () {
+  if ($(window).width() < 960) {
+    $('.scaleItem').click(function(event){
+      alert(event.target.id);
+    })
+  }
+}
